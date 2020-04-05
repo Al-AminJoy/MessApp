@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/menu_home_id"
+            android:icon="@drawable/ic_home"
+            android:title="Home"
+            />
+        <item android:id="@+id/menu_profile_id"
+            android:icon="@drawable/ic_profile"
+            android:title="Profile"
+            android:iconTint="@color/submitButtonColor"
+
+            />
+        <item android:id="@+id/menu_member_id"
+            android:icon="@drawable/ic_members"
+            android:title="Members"
+            android:iconTint="#9CA635"
+
+            />
+        <item android:id="@+id/menu_add_meal_id"
+            android:icon="@drawable/ic_meal"
+            android:title="Add Meal"
+            />
+        <item android:id="@+id/menu_add_debit_id"
+            android:icon="@drawable/ic_ad_debit"
+            android:title="Add Debit"
+            />
+        <item android:id="@+id/menu_my_status_id"
+            android:icon="@drawable/ic_account"
+            android:title="My Status"
+            />
+        <item android:id="@+id/menu_others_status_id"
+            android:icon="@drawable/ic_others_status"
+            android:title="Others Status"
+            />
+        <item android:id="@+id/menu_previous_month_id"
+            android:icon="@drawable/ic_previous_month"
+            android:title="Previous Month Status"
+            />
+    </group>
+
+
+      <item
+            android:title="Communication">
+            <menu>
+                <item android:id="@+id/menu_feedback"
+                    android:title="Feedback"
+                    android:icon="@drawable/ic_feedback"/>
+                <item android:id="@+id/menu_logout"
+                    android:title="Logout"
+                    android:icon="@drawable/ic_log_out"/>
+            </menu>
+
+        </item>
+
+
+
+
+
+</menu>

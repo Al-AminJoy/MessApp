@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="3dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="September"
+            android:textColor="@color/whiteColor"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:background="@color/basicColor"
+            android:padding="20dp"
+            android:textStyle="bold"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="3dp"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:background="@color/basicColor"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/whiteColor"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Debit"
+                android:textColor="@color/whiteColor"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Meal"
+                android:textColor="@color/whiteColor"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Used"
+                android:textColor="@color/whiteColor"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textColor="@color/whiteColor"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+    <include
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/others_stat_layout"
+        />
+
+</LinearLayout>

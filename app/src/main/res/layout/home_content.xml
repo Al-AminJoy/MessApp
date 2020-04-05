@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include
+        android:id="@+id/HomeTitleItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/toolbar_content"
+        />
+    <FrameLayout
+        android:id="@+id/frameMainActivityId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/HomeTitleItem"
+        android:layout_above="@id/fabHomePlusId"
+        android:layout_marginBottom="@dimen/margin4dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/basicColor"
+        android:layout_alignParentBottom="true"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHomeAddMealId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_meal"
+        app:tint="@color/whiteColor"
+        android:elevation="6dp"
+        android:backgroundTint="@color/FabColor"
+        app:pressedTranslationZ="20dp"
+        android:visibility="invisible"
+        android:layout_above="@id/fabHomeAddDebitId"
+        android:layout_alignParentEnd="true"
+
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHomeAddDebitId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_ad_debit"
+        app:tint="@color/whiteColor"
+        android:elevation="6dp"
+        app:pressedTranslationZ="20dp"
+        android:backgroundTint="@color/FabColor"
+        android:visibility="invisible"
+        android:layout_above="@id/fabHomePlusId"
+        android:layout_alignParentEnd="true"
+        />
+<!--
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHomeAddExpenseId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_expense"
+        android:elevation="6dp"
+        app:pressedTranslationZ="20dp"
+        android:backgroundTint="@color/FabColor"
+        android:visibility="invisible"
+        android:layout_above="@id/fabHomePlusId"
+        android:layout_alignParentEnd="true"
+        />
+
+-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHomePlusId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:tint="@color/whiteColor"
+        android:elevation="6dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginRight="20dp"
+        app:backgroundTint="@color/whiteColor"
+        app:pressedTranslationZ="20dp"
+        android:backgroundTint="@color/basicColor"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:borderWidth="3dp"
+        />
+ <!--  <RelativeLayout
+       android:layout_width="match_parent"
+       android:id="@+id/fabHomelay"
+       android:layout_alignParentBottom="true"
+       android:layout_height="wrap_content">
+
+
+     &lt;!&ndash;  <View
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@color/basicColor"
+           android:layout_alignParentBottom="true"
+           />
+       &lt;!&ndash;<include
+
+
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           layout="@layout/fab_content"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="18dp"
+           />&ndash;&gt;
+   </RelativeLayout>&ndash;&gt;-->
+
+
+
+
+
+</RelativeLayout>

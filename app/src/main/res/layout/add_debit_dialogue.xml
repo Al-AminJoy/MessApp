@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/basicColor"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/ibtAddDebitDialogCloseId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:background="@color/basicColor"
+            android:padding="@dimen/padding8dp"
+            android:layout_gravity="right"
+            android:clickable="true"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding20dp"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="5dp"
+            style="?android:selectableItemBackground"
+            android:id="@+id/cvAddDebitDialogueDatePickerId"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:backgroundTint="@color/submitButtonColor"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/basicColor"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_margin="1dp"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_date"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvAddDebitDialogueDateShower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:text="Peak Date"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+
+                    />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin4dp"
+                android:background="@color/whiteColor"
+                android:padding="@dimen/padding4dp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Debit Amount"
+                    android:digits="0123456789."
+
+                    android:inputType="number"
+                    android:textCursorDrawable="@color/textColor"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btSubmitMealDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Debit"
+            android:padding="@dimen/padding14dp"
+            android:textColor="@color/whiteColor"
+            android:backgroundTint="@color/submitButtonColor"
+            app:rippleColor="@color/whiteColor"
+            />
+    </LinearLayout>
+
+            </LinearLayout>
