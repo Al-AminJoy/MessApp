@@ -6,15 +6,39 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- To change the textColor of options menu-->
+        <item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>
+        <!-- To change the background of options menu-->
+        <item name="android:itemBackground">@color/basicColor</item>
+        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
     </style>
- <!--   <style name="CustomSpinnerTheme">
-        <item name="android:textSize">@dimen/textSizeM</item>
+    <style name="OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_option</item>
+
+    </style>
+    <style name="itemTextStyle.AppTheme" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
         <item name="android:textColor">@color/whiteColor</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textAlignment">center</item>
-    </style>-->
+        <item name="android:textSize">14sp</item>
+    </style>
     <style name="Button.Outlined" parent="Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:background">@drawable/button_shape_normal</item>
+    </style>
+    <!--    Change Progress Color-->
+    <style name="ProgressColor" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/basicColor</item>
+    </style>
+
+    <style name="ToolBarStyle.Base" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+   <!--    Overflow Menu Theme-->
+    <style name="Theme" parent="Platform.MaterialComponents.Light">
+        android:theme="@style/Theme"
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">5dp</item>
     </style>
 
 </resources>

@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -14,7 +16,6 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MyStatFragment extends Fragment {
     private TabLayout tlMyStat;
-    private TabItem tiTotalOverview,tiDailyOverview;
     private ViewPager vpMyStat;
     private MyStatVPAdapter myStatVPAdapter;
     @Override
@@ -33,9 +34,18 @@ public class MyStatFragment extends Fragment {
 
     private void findId(View view) {
         tlMyStat=view.findViewById(R.id.tlMyStatId);
-        tiTotalOverview=view.findViewById(R.id.tiMyStatusTotalOverviewId);
-        tiDailyOverview=view.findViewById(R.id.tiMyStatusDailyOverviewId);
         vpMyStat=view.findViewById(R.id.vpMyStatId);
 
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
     }
 }

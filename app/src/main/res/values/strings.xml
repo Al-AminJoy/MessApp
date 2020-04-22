@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Mess App</string>
+    <string name="keyDigits">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST0123456789_</string>
+    <string name="emailDigits">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST0123456789_</string>
+    <string name="numberDigits">0123456789</string>
+    <string name="amountDigits">0123456789.</string>
 
     <string name="open">Open</string>
     <string name="close">Close</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="debitWarning">Note :\n Meal Will Be Added \nBut Admin Will Approve Debit</string>
+    <string name="updateWarning">Are You Sure\n Want To Send Update \nRequest To Admin ?</string>
+    <string name="remove_warning">Note : \nAll Data of This User\nWill Be Lost</string>
     <string-array name="Breakfast">
 
         <item>0</item>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "72594099073",
+    "firebase_url": "https://mess-app-28b43.firebaseio.com",
+    "project_id": "mess-app-28b43",
+    "storage_bucket": "mess-app-28b43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72594099073:android:ca4f78d6cccf295a87b680",
+        "android_client_info": {
+          "package_name": "com.trustedoffer.messapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72594099073-ne54jpvhhmp4vp72pdk8j6dg5i3nfi25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trustedoffer.messapp",
+            "certificate_hash": "fed1ceba9eee786534c0ca786190fc82183c93cd"
+          }
+        },
+        {
+          "client_id": "72594099073-n97n2sbjvq9sr5g8vi5v97ubt0b3gpkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc5_PAVCFcPHXO7kV1rlUreF4K3w1fVno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72594099073-n97n2sbjvq9sr5g8vi5v97ubt0b3gpkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

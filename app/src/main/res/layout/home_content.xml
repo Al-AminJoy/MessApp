@@ -34,12 +34,13 @@
         android:src="@drawable/ic_meal"
         app:tint="@color/whiteColor"
         android:elevation="6dp"
-        android:backgroundTint="@color/FabColor"
+        app:backgroundTint="@color/whiteColor"
+        android:backgroundTint="@color/basicColor"
         app:pressedTranslationZ="20dp"
         android:visibility="invisible"
         android:layout_above="@id/fabHomeAddDebitId"
         android:layout_alignParentEnd="true"
-
+        app:borderWidth="@dimen/dimen2dp"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabHomeAddDebitId"
@@ -51,28 +52,13 @@
         app:tint="@color/whiteColor"
         android:elevation="6dp"
         app:pressedTranslationZ="20dp"
-        android:backgroundTint="@color/FabColor"
+        app:backgroundTint="@color/whiteColor"
+        android:backgroundTint="@color/basicColor"
         android:visibility="invisible"
         android:layout_above="@id/fabHomePlusId"
         android:layout_alignParentEnd="true"
+        app:borderWidth="@dimen/dimen2dp"
         />
-<!--
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabHomeAddExpenseId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
-        android:src="@drawable/ic_expense"
-        android:elevation="6dp"
-        app:pressedTranslationZ="20dp"
-        android:backgroundTint="@color/FabColor"
-        android:visibility="invisible"
-        android:layout_above="@id/fabHomePlusId"
-        android:layout_alignParentEnd="true"
-        />
-
--->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabHomePlusId"
@@ -88,34 +74,7 @@
         android:backgroundTint="@color/basicColor"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        app:borderWidth="3dp"
+        app:borderWidth="@dimen/dimen2dp"
         />
- <!--  <RelativeLayout
-       android:layout_width="match_parent"
-       android:id="@+id/fabHomelay"
-       android:layout_alignParentBottom="true"
-       android:layout_height="wrap_content">
-
-
-     &lt;!&ndash;  <View
-           android:layout_width="match_parent"
-           android:layout_height="40dp"
-           android:background="@color/basicColor"
-           android:layout_alignParentBottom="true"
-           />
-       &lt;!&ndash;<include
-
-
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           layout="@layout/fab_content"
-           android:layout_alignParentBottom="true"
-           android:layout_marginBottom="18dp"
-           />&ndash;&gt;
-   </RelativeLayout>&ndash;&gt;-->
-
-
-
-
 
 </RelativeLayout>

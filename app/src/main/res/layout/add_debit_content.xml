@@ -95,14 +95,15 @@
                             android:layout_marginTop="@dimen/margin4dp"
                             android:background="@color/whiteColor"
                             android:padding="@dimen/padding4dp"
+                            android:hint="Debit Amount"
+                            app:hintTextColor="@color/submitButtonColor"
+                            app:boxStrokeColor="@color/submitButtonColor"
                             >
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Debit Amount"
-                                android:digits="0123456789."
-
+                                android:digits="@string/amountDigits"
                                 android:inputType="number"
                                 android:textCursorDrawable="@color/textColor"
                                 android:textColor="@color/textColor"

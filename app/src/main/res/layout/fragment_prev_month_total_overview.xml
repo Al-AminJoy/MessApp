@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PrevMonthTotalOverviewFragment">
     <LinearLayout
@@ -15,16 +16,17 @@
             android:layout_height="wrap_content"
             app:cardElevation="3dp"
             app:cardCornerRadius="3dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin16dp"
+            android:layout_marginLeft="@dimen/margin16dp"
 
             >
             <TextView
+                android:id="@+id/tvPrevMonthTotalStatMonthId"
                 android:layout_width="match_parent"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:text="August"
+                android:text="September"
                 android:textColor="@color/whiteColor"
                 android:textSize="15sp"
                 android:gravity="center"
@@ -34,31 +36,24 @@
                 />
 
         </androidx.cardview.widget.CardView>
-
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin16dp"
             android:layout_marginBottom="10dp"
             >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-
                 >
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:cardElevation="2dp"
                     app:cardCornerRadius="3dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
-
-
+                    android:layout_marginRight="@dimen/margin16dp"
+                    android:layout_marginLeft="@dimen/margin16dp"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -95,9 +90,10 @@
                                 android:layout_marginBottom="5dp"
                                 />
                             <TextView
+                                android:id="@+id/tvPrevMonthTotalDebitId"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="12000"
+                                android:text="--"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
                                 android:textSize="15sp"
@@ -106,12 +102,12 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Meal Rate"
+                                android:text="Total Meal"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
                                 android:textSize="15sp"
                                 android:textStyle="bold"
-                                android:layout_marginTop="50dp"
+                                android:layout_marginTop="@dimen/margin32dp"
                                 />
                             <View
                                 android:layout_width="match_parent"
@@ -123,14 +119,17 @@
                                 android:layout_marginBottom="5dp"
                                 />
                             <TextView
+                                android:id="@+id/tvPrevMonthTotalMealId"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="40.50"
+                                android:text="--"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
                                 android:textSize="15sp"
                                 android:textStyle="bold"
                                 />
+
+
 
 
                         </LinearLayout>
@@ -156,10 +155,13 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 >
+
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Total Expense"
+                                    android:text="Meal Rate"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
                                     android:textSize="15sp"
@@ -175,9 +177,10 @@
                                     android:layout_marginBottom="5dp"
                                     />
                                 <TextView
+                                    android:id="@+id/tvPrevMonthMealRateId"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="12500"
+                                    android:text="--"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
                                     android:textSize="15sp"
@@ -186,12 +189,12 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Total Meal"
+                                    android:text="Balanced Status"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
                                     android:textSize="15sp"
                                     android:textStyle="bold"
-                                    android:layout_marginTop="50dp"
+                                    android:layout_marginTop="@dimen/margin32dp"
                                     />
                                 <View
                                     android:layout_width="match_parent"
@@ -203,16 +206,15 @@
                                     android:layout_marginBottom="5dp"
                                     />
                                 <TextView
+                                    android:id="@+id/tvPrevMonthTotalExpenseId"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="300"
+                                    android:text="--"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
                                     android:textSize="15sp"
                                     android:textStyle="bold"
                                     />
-
-
                             </LinearLayout>
 
 
@@ -234,17 +236,6 @@
                     android:layout_marginRight="30dp"
                     android:layout_marginLeft="30dp"
                     >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Someone Didn't Added Debit Amount of 500"
-                        android:textSize="15sp"
-                        android:padding="10dp"
-                        android:textColor="@color/whiteColor"
-                        android:background="@color/basicColor"
-                        android:gravity="center"
-                        />
-
 
                 </androidx.cardview.widget.CardView>
 

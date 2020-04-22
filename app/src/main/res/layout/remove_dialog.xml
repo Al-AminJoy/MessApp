@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/basicColor"
+    android:layout_width="match_parent"
+    android:padding="@dimen/padding18dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Remove !"
+        android:textColor="#FF0000"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding10dp"
+        android:textSize="@dimen/textSizeL"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remove_warning"
+        android:textColor="@color/whiteColor"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding10dp"
+        android:textSize="@dimen/textSizeM"
+        android:gravity="center"
+        />
+   <!-- <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_log_out"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding4dp"
+        />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="@dimen/margin24dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btRemoveYesDialogId"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:padding="@dimen/padding14dp"
+            android:textColor="@color/whiteColor"
+            android:backgroundTint="@color/submitButtonColor"
+            app:rippleColor="@color/whiteColor"
+            android:layout_margin="@dimen/margin8dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btRemoveNoDialogId"
+            android:layout_margin="@dimen/margin8dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:padding="@dimen/padding14dp"
+            android:textColor="@color/whiteColor"
+            android:backgroundTint="@color/submitButtonColor"
+            app:rippleColor="@color/whiteColor"
+            />
+    </LinearLayout>
+
+</LinearLayout>

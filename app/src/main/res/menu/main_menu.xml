@@ -22,10 +22,10 @@
             android:icon="@drawable/ic_meal"
             android:title="Add Meal"
             />
-        <item android:id="@+id/menu_add_debit_id"
+       <!-- <item android:id="@+id/menu_add_debit_id"
             android:icon="@drawable/ic_ad_debit"
             android:title="Add Debit"
-            />
+            />-->
         <item android:id="@+id/menu_my_status_id"
             android:icon="@drawable/ic_account"
             android:title="My Status"
@@ -34,6 +34,14 @@
             android:icon="@drawable/ic_others_status"
             android:title="Others Status"
             />
+        <item android:id="@+id/menu_req_id"
+            android:icon="@drawable/ic_ad_debit"
+            android:title="My Request"
+            />
+        <!--<item android:id="@+id/menu_update_request_id"
+            android:icon="@drawable/ic_update"
+            android:title="Update Request"
+            />-->
         <item android:id="@+id/menu_previous_month_id"
             android:icon="@drawable/ic_previous_month"
             android:title="Previous Month Status"

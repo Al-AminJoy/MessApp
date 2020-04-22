@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvMyUpdateReqNoDataFoundId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:textColor="@color/basicColor"
+        android:textSize="@dimen/textSizeXL"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+    <!--<androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dimen4dp"
+        app:cardCornerRadius="@dimen/dimen4dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="@dimen/margin10dp"
+        android:layout_marginLeft="@dimen/margin10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Update Request"
+            android:textColor="@color/whiteColor"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:background="@color/basicColor"
+            android:padding="10dp"
+            android:textStyle="bold"
+            />
+    </androidx.cardview.widget.CardView>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvMyUpdateRequestId"
+        />
+</LinearLayout>

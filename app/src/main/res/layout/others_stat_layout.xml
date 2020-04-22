@@ -4,75 +4,248 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvOtherStat"
+        android:id="@+id/cvOtherStatLayId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="@dimen/margin6dp"
+        android:layout_marginRight="@dimen/margin16dp"
+        android:layout_marginLeft="@dimen/margin16dp"
         app:cardElevation="3dp"
         app:cardCornerRadius="3dp"
         android:foreground="?android:selectableItemBackground"
+        android:clickable="true"
+        app:cardBackgroundColor="@color/whiteColor"
         >
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            android:weightSum="5"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin2dp"
             android:background="@color/basicColor"
-            >
+            android:padding="@dimen/padding10dp"
+            android:layout_height="wrap_content">
             <TextView
-                android:layout_width="0dp"
+                android:id="@+id/tvOtherStatNameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="Al-Amin"
+                android:layout_gravity="center"
+                android:text="Al-Amin Islam Joy"
                 android:textColor="@color/whiteColor"
-                android:textSize="15dp"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="2500"
-                android:textColor="@color/whiteColor"
-                android:textSize="15dp"
-                android:gravity="center"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="50"
-                android:textColor="@color/whiteColor"
-                android:textSize="15dp"
-                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSizeM" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/whiteColor"
+                android:layout_marginLeft="@dimen/margin20dp"
+                android:layout_marginRight="@dimen/margin20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="2200"
-                android:textColor="@color/whiteColor"
-                android:textSize="15dp"
-                android:gravity="center"
-                />
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin8dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Debit"
+                        android:gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/whiteColor"
+                        android:layout_marginLeft="@dimen/margin32dp"
+                        android:layout_marginRight="@dimen/margin32dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        />
+                    <TextView
+                        android:id="@+id/tvOtherStatDebitId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="+300"
-                android:textColor="@color/whiteColor"
-                android:textSize="15dp"
-                android:gravity="center"
-                />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Used"
+                        android:gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/whiteColor"
+                        android:layout_marginLeft="@dimen/margin32dp"
+                        android:layout_marginRight="@dimen/margin32dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        />
+                    <TextView
+                        android:id="@+id/tvOtherStatUsedId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/whiteColor"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total Meal"
+                            android:gravity="center"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="15sp"
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/whiteColor"
+                            android:layout_marginLeft="@dimen/margin32dp"
+                            android:layout_marginRight="@dimen/margin32dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvOtherStatMealId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="-"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="15dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Status"
+                            android:gravity="center"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="15sp"
+
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/whiteColor"
+                            android:layout_marginLeft="@dimen/margin32dp"
+                            android:layout_marginRight="@dimen/margin32dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvOtherStatLayStatusId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="-"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
+
+        <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:background="@color/basicColor"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvOtherStatNameId"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvOtherStatDebitId"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvOtherStatMealId"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="&#45;&#45;"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvOtherStatUsedId"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvOtherStatLayStatusId"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+        -->
     </androidx.cardview.widget.CardView>
 
 

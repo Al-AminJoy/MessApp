@@ -6,6 +6,7 @@
 
     <color name="whiteColor">#FFF</color>
     <color name="blackColor">#000</color>
+    <color name="redColor">#FF0000</color>
     <color name="basicColor">#272733</color>
     <color name="darkColor">#554545</color>
     <color name="drawerColor">#272733</color>

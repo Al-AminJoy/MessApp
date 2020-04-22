@@ -4,19 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MyStatDailyOverViewFragment">
+    <TextView
+        android:id="@+id/tvMyDailyStatNoDataFoundId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:textColor="@color/basicColor"
+        android:textSize="@dimen/textSizeXL"
+        android:gravity="center"
+        android:visibility="gone"
+        />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="3dp"
         app:cardCornerRadius="3dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="@dimen/margin10dp"
+        android:layout_marginLeft="@dimen/margin10dp"
 
         >
         <TextView
+            android:id="@+id/tvMyDailyStatMonthId"
             android:layout_width="match_parent"
             android:layout_weight="2"
             android:layout_height="wrap_content"
@@ -101,113 +113,33 @@
                 android:textStyle="bold"
                 />
 
-
         </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/daily_overview_layout"
-        />
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/rvMyDailyStat"
+       tools:listitem="@layout/daily_overview_layout"
+       />
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:text="Update Data"
-    android:padding="10dp"
-    android:textSize="10dp"
-    android:textStyle="bold"
-    android:textColor="@color/whiteColor"
-    android:background="@color/basicColor"
-    android:layout_gravity="center"
-    />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btUpdateData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cornerRadius="@dimen/margin4dp"
+        android:layout_marginLeft="@dimen/margin10dp"
+        android:layout_marginRight="@dimen/margin10dp"
+        app:rippleColor="@color/whiteColor"
+        android:backgroundTint="@color/basicColor"
+        android:padding="15dp"
+        android:text="Update Data"
+        app:strokeColor="@color/whiteColor"
+        app:strokeWidth="@dimen/margin2dp"
+        android:textColor="@color/whiteColor"
+        android:textSize="15sp"
+        />
 
 </LinearLayout>

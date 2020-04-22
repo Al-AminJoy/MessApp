@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/basicColor"
+    tools:context=".JoinMessActivity">
+   <ProgressBar
+       android:id="@+id/pbJoinMessId"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:indeterminate="true"
+       android:layout_marginLeft="@dimen/margin18dp"
+       android:layout_marginRight="@dimen/margin18dp"
+       android:indeterminateDrawable="@drawable/log_in_progress_color"
+       android:layout_centerInParent="true"
+       android:visibility="gone"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/linLayJoinMessId"
+        android:layout_height="match_parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btJoinMessId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Mess"
+            android:padding="@dimen/padding14dp"
+            android:textColor="@color/whiteColor"
+            android:backgroundTint="@color/submitButtonColor"
+            app:rippleColor="@color/whiteColor"
+            android:layout_marginLeft="@dimen/margin24dp"
+            android:layout_marginRight="@dimen/margin24dp"
+            app:strokeColor="@color/whiteColor"
+            app:strokeWidth="@dimen/margin2dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btCreateMessId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Mess"
+            android:padding="@dimen/padding14dp"
+            android:textColor="@color/whiteColor"
+            android:backgroundTint="@color/submitButtonColor"
+            app:rippleColor="@color/whiteColor"
+            android:layout_marginLeft="@dimen/margin24dp"
+            android:layout_marginRight="@dimen/margin24dp"
+            app:strokeColor="@color/whiteColor"
+            app:strokeWidth="@dimen/margin2dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

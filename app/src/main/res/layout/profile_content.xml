@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/profileBackgroundColor"
+    android:background="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <View
         android:layout_width="match_parent"
@@ -25,13 +25,15 @@
             android:orientation="vertical"
             >
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/ibtProfileEdite"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_edit_profile"
                 android:layout_gravity="end"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
+                android:background="@color/whiteColor"
                 />
         </LinearLayout>
 
@@ -54,32 +56,36 @@
                     android:paddingBottom="30dp"
                     >
                     <TextView
+                        android:id="@+id/tvProfileNameId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Al-Amin Islam Joy"
                         android:gravity="center"
-                        android:textSize="20sp"
+                        android:textSize="@dimen/textSizeL"
                         android:textColor="@color/basicColor"
                         android:textStyle="bold"
                         />
                     <TextView
+                        android:id="@+id/tvProfileMessNameId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Spark Mess(spark111)"
+                        android:gravity="center"
+                        android:textSize="@dimen/textSizeM"
+                        android:textColor="@color/basicColor"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:id="@+id/tvProfileStatusId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Admin"
                         android:gravity="center"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/textSizeM"
                         android:textColor="@color/basicColor"
                         android:textStyle="bold"
                         />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Spark Mess"
-                        android:gravity="center"
-                        android:textSize="15sp"
-                        android:textColor="@color/basicColor"
-                        android:textStyle="bold"
-                        />
+
 
                 </LinearLayout>
 
@@ -118,6 +124,7 @@
                        android:layout_marginRight="60dp"
                        />
                    <TextView
+                       android:id="@+id/tvProfileEmailId"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="alaminislam3555@gmail.com"
@@ -146,6 +153,7 @@
                        android:layout_marginRight="60dp"
                        />
                    <TextView
+                       android:id="@+id/tvProfileNumberId"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="01749411185"
@@ -174,6 +182,7 @@
                        android:layout_marginRight="60dp"
                        />
                    <TextView
+                       android:id="@+id/tvProfileGenderId"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Male"

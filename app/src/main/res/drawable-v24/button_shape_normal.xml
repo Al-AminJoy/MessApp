@@ -11,7 +11,7 @@
                 />
 
             <solid
-                android:color="@color/basicColor"
+                android:color="@color/submitButtonColor"
                 />
             <corners
                 android:bottomLeftRadius="2dp"
