@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/swipeMyDebitReqId"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/tvMyDebitReqNoDataFoundId"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text=""
-        android:textColor="@color/basicColor"
-        android:textSize="@dimen/textSizeXL"
-        android:gravity="center"
-        android:visibility="gone"
-        />
-  <!--  <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="@dimen/dimen4dp"
-        app:cardCornerRadius="@dimen/dimen4dp"
-        android:layout_marginTop="@dimen/margin10dp"
-        android:layout_marginRight="@dimen/margin16dp"
-        android:layout_marginLeft="@dimen/margin16dp"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="Debit Request"
-            android:textColor="@color/whiteColor"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:background="@color/basicColor"
-            android:padding="10dp"
-            android:textStyle="bold"
-            />
-    </androidx.cardview.widget.CardView>-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="@dimen/margin10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rvMyDebitRequestId"
-        />
-</LinearLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:layout_height="wrap_content">
+      <TextView
+          android:id="@+id/tvMyDebitReqNoDataFoundId"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text=""
+          android:textColor="@color/basicColor"
+          android:textSize="@dimen/textSizeXL"
+          android:gravity="center"
+          android:visibility="gone"
+          />
+      <androidx.recyclerview.widget.RecyclerView
+          android:layout_marginTop="@dimen/margin10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/rvMyDebitRequestId"
+          />
+  </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

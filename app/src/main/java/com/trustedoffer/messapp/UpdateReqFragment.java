@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,15 +46,23 @@ public class UpdateReqFragment extends Fragment implements NoMessageShowListener
     private ProgressDialog progressDialog;
     private TextView tvNoDataMessage;
     private NoMessageShowListener noMessageShowListener;
+    private SwipeRefreshLayout refreshLayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_update_req, container, false);
         findId(view);
+        getActivity().setTitle("Update Request");
         db = FirebaseFirestore.getInstance();
         updateRef=db.document("messDatabase/updateRequest");
         noMessageShowListener=this;
         initRecyclerView();
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData();
+            }
+        });
         loadData();
         return view;
     }
@@ -64,7 +73,8 @@ public class UpdateReqFragment extends Fragment implements NoMessageShowListener
         progressDialog.show();
     }
     private void loadData() {
-        progressOp();
+        list.clear();
+        refreshLayout.setRefreshing(true);
         final SharedPreferences preferences=getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
 
         updateRef.collection("updateReqCollection")
@@ -85,13 +95,13 @@ public class UpdateReqFragment extends Fragment implements NoMessageShowListener
                             if (list.size()==0){
                                 tvNoDataMessage.setVisibility(View.VISIBLE);
                                 tvNoDataMessage.setText("No Request Found");
-                                progressDialog.dismiss();
+                                refreshLayout.setRefreshing(false);
                             }
                             else {
                                 tvNoDataMessage.setVisibility(View.GONE);
                                 adapter=new UpdateReqAdapter(noMessageShowListener,getContext(),list);
                                 recyclerView.setAdapter(adapter);
-                                progressDialog.dismiss();
+                                refreshLayout.setRefreshing(false);
                             }
 
 
@@ -103,6 +113,7 @@ public class UpdateReqFragment extends Fragment implements NoMessageShowListener
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d("Failure","Exception: "+e);
+                        refreshLayout.setRefreshing(false);
                     }
                 });
     }
@@ -110,6 +121,7 @@ public class UpdateReqFragment extends Fragment implements NoMessageShowListener
     private void findId(View view) {
         recyclerView=view.findViewById(R.id.rvUpdateRequestId);
         tvNoDataMessage=view.findViewById(R.id.tvUpdateReqNoDataFoundId);
+        refreshLayout=view.findViewById(R.id.swipeUpdateReqId);
     }
 
     private void initRecyclerView() {

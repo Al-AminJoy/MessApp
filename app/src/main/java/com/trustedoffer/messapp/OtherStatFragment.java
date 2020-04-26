@@ -56,6 +56,7 @@ public class OtherStatFragment extends Fragment implements ClickEvent {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_other_stat, container, false);
         findId(view);
+        getActivity().setTitle("Everyone's Status");
         tvMonthName.setText(StoredValues.monthName);
         db=FirebaseFirestore.getInstance();
         ref=db.document("messDatabase/userInfo");

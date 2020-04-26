@@ -101,11 +101,14 @@ public class DebitReqAdapter extends RecyclerView.Adapter<DebitReqAdapter.DebitR
                             @Override
                             public void onSuccess(List<Object> objects) {
                                 list.remove(position);
+                                notifyDataSetChanged();
+                                Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+                                holder.linLayButtons.setVisibility(View.VISIBLE);
+                                holder.pbConfirmDebit.setVisibility(View.GONE);
                                 if (list.size()==0){
                                     noMessageShowListener.NoMessageListener(false);
                                 }
-                                notifyDataSetChanged();
-                                Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+
 
                             }
                         })
@@ -132,11 +135,15 @@ public class DebitReqAdapter extends RecyclerView.Adapter<DebitReqAdapter.DebitR
                             @Override
                             public void onSuccess(Void aVoid) {
                                 list.remove(position);
+                                notifyDataSetChanged();
+                                Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+                                holder.linLayButtons.setVisibility(View.VISIBLE);
+                                holder.pbConfirmDebit.setVisibility(View.GONE);
                                 if (list.size()==0){
                                     noMessageShowListener.NoMessageListener(false);
                                 }
-                                notifyDataSetChanged();
-                                Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+
+
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

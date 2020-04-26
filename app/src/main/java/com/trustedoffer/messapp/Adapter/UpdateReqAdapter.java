@@ -108,11 +108,14 @@ public class UpdateReqAdapter extends RecyclerView.Adapter<UpdateReqAdapter.Upda
                     @Override
                     public void onSuccess(List<Object> objects) {
                         list.remove(position);
+                        notifyDataSetChanged();
+                        Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+                        holder.linLayButtons.setVisibility(View.VISIBLE);
+                        holder.pbConfirm.setVisibility(View.GONE);
                         if (list.size()==0){
                             noMessageShowListener.NoMessageListener(false);
                         }
-                        notifyDataSetChanged();
-                        Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -137,11 +140,14 @@ public class UpdateReqAdapter extends RecyclerView.Adapter<UpdateReqAdapter.Upda
                     @Override
                     public void onSuccess(Void aVoid) {
                         list.remove(position);
+                        notifyDataSetChanged();
+                        Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+                        holder.linLayButtons.setVisibility(View.VISIBLE);
+                        holder.pbConfirm.setVisibility(View.GONE);
                         if (list.size()==0){
                             noMessageShowListener.NoMessageListener(false);
                         }
-                        notifyDataSetChanged();
-                        Toast.makeText(context,"Success",Toast.LENGTH_SHORT).show();
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

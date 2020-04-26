@@ -33,6 +33,7 @@ public class OtherStatDetailsDailyOverviewFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_other_stat_details_daily_overview, container, false);
         findId(view);
+        getActivity().setTitle("Daily Status");
         tvMonthName.setText(StoredValues.monthName);
         Bundle bundle=this.getArguments();
         if (bundle!=null){

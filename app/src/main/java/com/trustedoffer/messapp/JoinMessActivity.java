@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -40,12 +41,14 @@ import java.util.Date;
 import java.util.List;
 
 public class JoinMessActivity extends AppCompatActivity implements View.OnClickListener {
-    private MaterialButton btJoinMess,btCreateMess;
-    private ProgressBar pbJoin;
+    private MaterialButton btJoinMess,btCreateMess,btMyJoinReq,btMyJoinReqLogOut;
+    private ProgressBar pbJoin,pbMyPendingReq;
     private LinearLayout linLayButtons;
     private List<MessListModelClass> listMess=new ArrayList<>();
     private FirebaseFirestore db;
     private DocumentReference ref;
+    private String joinMessName;
+    private String myReqKey,myReqMessName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,13 +63,15 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
         findId();
         pbJoin.setVisibility(View.VISIBLE);
         linLayButtons.setVisibility(View.GONE);
+        btMyJoinReqLogOut.setVisibility(View.GONE);
         db=FirebaseFirestore.getInstance();
         ref=db.document("messDatabase/messList");
         loadData();
         btJoinMess.setOnClickListener(this);
         btCreateMess.setOnClickListener(this);
+        btMyJoinReq.setOnClickListener(this);
+        btMyJoinReqLogOut.setOnClickListener(this);
     }
-
     private void loadData() {
         ref.collection("messListCollection").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -80,6 +85,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
                             Toast.makeText(getApplicationContext(),"Mess Size: "+listMess.size(),Toast.LENGTH_SHORT).show();
                             pbJoin.setVisibility(View.GONE);
                             linLayButtons.setVisibility(View.VISIBLE);
+                            btMyJoinReqLogOut.setVisibility(View.VISIBLE);
 
                         } else {
                         }
@@ -92,6 +98,9 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
         btCreateMess=findViewById(R.id.btCreateMessId);
         pbJoin=findViewById(R.id.pbJoinMessId);
         linLayButtons=findViewById(R.id.linLayJoinMessId);
+        btMyJoinReqLogOut=findViewById(R.id.btJoinMessLogOutId);
+        btMyJoinReq=findViewById(R.id.btMyMessReqId);
+        pbMyPendingReq=findViewById(R.id.pbMyMessReqShowDialogId);
     }
 
     @Override
@@ -103,8 +112,121 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btJoinMessId:
                 showJoinDialog();
                 break;
+            case R.id.btMyMessReqId:
+                    myReq();
+                break;
+            case R.id.btJoinMessLogOutId:
+                logoutOp();
+                break;
         }
 
+    }
+
+    private void logoutOp() {
+        Intent intent=new Intent(JoinMessActivity.this,LogInActivity.class);
+        SharedPreferences sharedPreferences=getSharedPreferences(SharedPref.AppPackage,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putString(SharedPref.SpEmail,"");
+        editor.putString(SharedPref.SpMessKey,"");
+        editor.putString(SharedPref.SpStatus,"");
+        editor.putString(SharedPref.SpMessName,"");
+        editor.putString(SharedPref.SpGender,"");
+        editor.putString(SharedPref.SpNumber,"");
+        editor.putString(SharedPref.SpUserKey,"");
+        editor.putString(SharedPref.SpName,"");
+        editor.apply();
+        startActivity(intent);
+        finish();
+    }
+
+    private void myReq() {
+        btMyJoinReq.setVisibility(View.GONE);
+        pbMyPendingReq.setVisibility(View.VISIBLE);
+        final List<JoinReqModelClass> joinReqList=new ArrayList<>();
+        final SharedPreferences pendingPreferences=getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
+        db.collection("messDatabase").document("joinRequest").collection("joinReqCollection")
+                .whereEqualTo("user_email",pendingPreferences.getString(SharedPref.SpEmail,""))
+                .whereEqualTo("approved",false)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                JoinReqModelClass joinReqModelClass=document.toObject(JoinReqModelClass.class);
+                                myReqKey=document.getId();
+                                joinReqList.add(joinReqModelClass);
+                            }
+                            if (joinReqList.size()>0){
+                                showMyPendingReqDialog(joinReqList);
+                                btMyJoinReq.setVisibility(View.VISIBLE);
+                                pbMyPendingReq.setVisibility(View.GONE);
+                            }
+                            else {
+                                btMyJoinReq.setVisibility(View.VISIBLE);
+                                pbMyPendingReq.setVisibility(View.GONE);
+                                Toast.makeText(getApplicationContext(),"No Request Found",Toast.LENGTH_SHORT).show();
+                            }
+
+
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Failed","Failed Reason :"+e);
+                    }
+                });
+    }
+
+    private void showMyPendingReqDialog(List<JoinReqModelClass> joinReqList) {
+
+            myReqMessName=joinReqList.get(0).getMess_name();
+        Toast.makeText(getApplicationContext(),"Key",Toast.LENGTH_SHORT).show();
+
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+            View view = layoutInflater.inflate(R.layout.my_join_req_dialog, null);
+            ImageButton ibClose=view.findViewById(R.id.ibtMyMessReqDialogCloseId);
+            final TextView tvMessName=view.findViewById(R.id.tvMyMessReqDialogNameId);
+            final MaterialButton btCancel=view.findViewById(R.id.btMyMessReqDialogCancelId);
+            final ProgressBar pbCancelMess=view.findViewById(R.id.pbMyMessReqDialogCancelId);
+
+            final androidx.appcompat.app.AlertDialog alertDialog = new AlertDialog.Builder(this)
+                    .setView(view).setCancelable(false).create();
+            tvMessName.setText(myReqMessName);
+            btCancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    pbCancelMess.setVisibility(View.VISIBLE);
+                    btCancel.setVisibility(View.GONE);
+                    db.document("messDatabase/joinRequest/joinReqCollection/"+""+myReqKey).delete()
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    pbCancelMess.setVisibility(View.GONE);
+                                    btCancel.setVisibility(View.VISIBLE);
+                                    alertDialog.cancel();
+                                    Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    pbCancelMess.setVisibility(View.GONE);
+                                    btCancel.setVisibility(View.VISIBLE);
+                                    Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            });
+            ibClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.cancel();
+                }
+            });
+            alertDialog.show();
     }
 
     private void showCreateMessDialog() {
@@ -168,7 +290,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
                                             reqList.add(req);
                                         }
                                         if (reqList.size()==0){
-                                            Task task1=db.document("messDatabase/userInfo/userInfoCollection/"+""+ StoredValues.userKey).update("mess_key",key,"mess_name",messName,"user_status","admin");
+                                            Task task1=db.document("messDatabase/userInfo/userInfoCollection/"+""+ preferences.getString(SharedPref.SpUserKey,"")).update("mess_key",key,"mess_name",messName,"user_status","admin");
                                             String time= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
                                             MessListModelClass list=new MessListModelClass(messName,key,time);
                                             Task task2=db.collection("messDatabase").document("messList").collection("messListCollection").add(list);
@@ -178,6 +300,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
                                                     SharedPreferences.Editor editor=preferences.edit();
                                                     editor.putString(SharedPref.SpMessKey,key);
                                                     editor.putString(SharedPref.SpMessName,messName);
+                                                    editor.putString(SharedPref.SpStatus,"admin");
                                                     editor.apply();
                                                     Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
                                                     startActivity(new Intent(JoinMessActivity.this,MainActivity.class));
@@ -205,7 +328,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.d("Failed","Failed Reason :"+e);
+
                                 }
                             });
                 }
@@ -238,6 +361,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View view) {
                 final List<JoinReqModelClass> reqList=new ArrayList<>();
 
+
              if (inTxtKey.length()==0){
                  inTxtKey.setError("Insert Key");
                  return;
@@ -247,6 +371,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
              for (MessListModelClass data:listMess){
                  if (data.getMess_key().equals(key)){
                     exist=true;
+                     joinMessName=data.getMess_name();
                     break;
                  }
                  else {
@@ -260,6 +385,7 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
                  final String joinName=sp.getString(SharedPref.SpName,"");
                  final String joinEmail=sp.getString(SharedPref.SpEmail,"");
                  final String joinGender=sp.getString(SharedPref.SpGender,"");
+                 final String joinUserKey=sp.getString(SharedPref.SpUserKey,"");
                  final String joinTime=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
                  final String joinMessKey=key;
                  db.collection("messDatabase").document("joinRequest").collection("joinReqCollection")
@@ -275,12 +401,12 @@ public class JoinMessActivity extends AppCompatActivity implements View.OnClickL
                                          reqList.add(req);
                                      }
                                      if (reqList.size()==0){
-                                         JoinReqModelClass join=new JoinReqModelClass(joinName,joinEmail,joinGender,joinTime,joinMessKey,false);
+                                         JoinReqModelClass join=new JoinReqModelClass(joinName,joinEmail,joinGender,joinTime,joinMessKey,joinMessName,joinUserKey,false);
                                          db.collection("messDatabase").document("joinRequest").collection("joinReqCollection").add(join)
                                                  .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                      @Override
                                                      public void onSuccess(DocumentReference documentReference) {
-                                                         Toast.makeText(getApplicationContext(),"Success\nWait Until\nApprove Request",Toast.LENGTH_SHORT).show();
+                                                         Toast.makeText(getApplicationContext(),"Success! Wait Until Approve Request",Toast.LENGTH_SHORT).show();
                                                          alertDialog.cancel();
                                                          btJoin.setVisibility(View.VISIBLE);
                                                          pbJoin.setVisibility(View.GONE);

@@ -1,44 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/swipeUpdateReqId"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/tvUpdateReqNoDataFoundId"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text=""
-        android:textColor="@color/basicColor"
-        android:textSize="@dimen/textSizeXL"
-        android:gravity="center"
-        android:visibility="gone"
-        />
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        app:cardCornerRadius="3dp"
-        android:layout_marginTop="@dimen/margin10dp"
-        android:layout_marginRight="@dimen/margin10dp"
-        android:layout_marginLeft="@dimen/margin10dp"
-        >
+        android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/tvUpdateReqNoDataFoundId"
             android:layout_width="match_parent"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="Update Request"
-            android:textColor="@color/whiteColor"
-            android:textSize="15sp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/basicColor"
+            android:textSize="@dimen/textSizeXL"
             android:gravity="center"
-            android:background="@color/basicColor"
-            android:padding="10dp"
-            android:textStyle="bold"
+            android:visibility="gone"
             />
-    </androidx.cardview.widget.CardView>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rvUpdateRequestId"
-        />
-</LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvUpdateRequestId"
+            />
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

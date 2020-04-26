@@ -205,17 +205,59 @@
 
 
         </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btSubmitMealDialog"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add meal"
-            android:padding="@dimen/padding14dp"
-            android:textColor="@color/whiteColor"
-            android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
-            />
+            android:layout_marginTop="@dimen/margin8dp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/padding4dp"
+            android:hint="Debit Amount"
+            app:hintTextColor="@color/submitButtonColor"
+            app:boxStrokeColor="@color/submitButtonColor"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddDebitDialogId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/amountDigits"
+                android:inputType="number"
+                android:textCursorDrawable="@color/textColor"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeM"
+                android:maxLength="5"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:id="@+id/pbAddDataDialogId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:padding="@dimen/padding8dp"
+                android:indeterminateDrawable="@drawable/log_in_progress_color"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:background="@color/basicColor"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btSubmitMealDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:padding="@dimen/padding14dp"
+                android:textColor="@color/whiteColor"
+                android:backgroundTint="@color/submitButtonColor"
+                app:rippleColor="@color/whiteColor"
+                />
+        </RelativeLayout>
+
     </LinearLayout>
 
 

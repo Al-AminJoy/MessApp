@@ -23,7 +23,7 @@ public class MyStatFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_my_stat, container, false);
         findId(view);
-
+        getActivity().setTitle("My Status");
         myStatVPAdapter=new MyStatVPAdapter(getChildFragmentManager());
         myStatVPAdapter.AddFragment( new MyStatTotalOverViewFragment(),"Total Overview");
         myStatVPAdapter.AddFragment(new MyStatDailyOverViewFragment(),"Daily Overview");

@@ -38,20 +38,71 @@
             app:strokeWidth="@dimen/margin2dp"
             />
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btCreateMessId"
+        android:id="@+id/btCreateMessId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Mess"
+        android:padding="@dimen/padding14dp"
+        android:textColor="@color/whiteColor"
+        android:backgroundTint="@color/submitButtonColor"
+        app:rippleColor="@color/whiteColor"
+        android:layout_marginLeft="@dimen/margin24dp"
+        android:layout_marginRight="@dimen/margin24dp"
+        app:strokeColor="@color/whiteColor"
+        app:strokeWidth="@dimen/margin2dp"
+        android:layout_marginTop="@dimen/margin8dp"
+        />
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Create Mess"
-            android:padding="@dimen/padding14dp"
-            android:textColor="@color/whiteColor"
-            android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
             android:layout_marginLeft="@dimen/margin24dp"
             android:layout_marginRight="@dimen/margin24dp"
-            app:strokeColor="@color/whiteColor"
-            app:strokeWidth="@dimen/margin2dp"
             android:layout_marginTop="@dimen/margin8dp"
-            />
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:id="@+id/pbMyMessReqShowDialogId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:layout_marginLeft="@dimen/margin18dp"
+                android:layout_marginRight="@dimen/margin18dp"
+                android:indeterminateDrawable="@drawable/log_in_progress_color"
+                android:layout_centerInParent="true"
+
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btMyMessReqId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pending Request"
+                android:padding="@dimen/padding14dp"
+                android:textColor="@color/whiteColor"
+                android:backgroundTint="@color/submitButtonColor"
+                app:rippleColor="@color/whiteColor"
+                app:strokeColor="@color/whiteColor"
+                app:strokeWidth="@dimen/margin2dp"
+
+                />
+        </RelativeLayout>
+
     </LinearLayout>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btJoinMessLogOutId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:padding="@dimen/padding18dp"
+        android:textColor="@color/whiteColor"
+        android:backgroundTint="@color/submitButtonColor"
+        app:rippleColor="@color/whiteColor"
+        android:layout_marginLeft="@dimen/margin24dp"
+        android:layout_marginRight="@dimen/margin24dp"
+        app:strokeColor="@color/whiteColor"
+        app:strokeWidth="@dimen/margin2dp"
+        android:layout_marginTop="@dimen/margin8dp"
+        android:layout_marginBottom="@dimen/margin24dp"
+        app:cornerRadius="@dimen/dimen24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        />
 </RelativeLayout>

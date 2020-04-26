@@ -59,7 +59,13 @@ public class LogInActivity extends AppCompatActivity {
 
         SharedPreferences preferences=getSharedPreferences(SharedPref.AppPackage,Context.MODE_PRIVATE);
         String email=preferences.getString(SharedPref.SpEmail,"");
-        if (!email.isEmpty()){
+        String messKey=preferences.getString(SharedPref.SpMessKey,"");
+        if (!email.isEmpty() && !messKey.isEmpty()){
+            Intent intent=new Intent(LogInActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if (!email.isEmpty() && messKey.isEmpty()){
             Intent intent=new Intent(LogInActivity.this,JoinMessActivity.class);
             startActivity(intent);
             finish();
@@ -142,10 +148,11 @@ public class LogInActivity extends AppCompatActivity {
                                     editor.putString(SharedPref.SpNumber,userNumber);
                                     editor.putString(SharedPref.SpMessKey,userMessKey);
                                     editor.putString(SharedPref.SpGender,userGender);
+                                    editor.putString(SharedPref.SpStatus,userStatus);
                                     editor.putString(SharedPref.SpMessName,userMessName);
+                                    editor.putString(SharedPref.SpUserKey,document.getId());
                                     editor.apply();
-                                    StoredValues.userKey=document.getId();
-                                    Toast.makeText(getApplicationContext(),"Key : "+StoredValues.userKey,Toast.LENGTH_SHORT).show();
+                                   // Toast.makeText(getApplicationContext(),"Key : "+StoredValues.userKey,Toast.LENGTH_SHORT).show();
                                     break;
 
                                 }

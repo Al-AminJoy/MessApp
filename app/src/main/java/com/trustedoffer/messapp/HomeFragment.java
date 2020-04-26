@@ -102,6 +102,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         findId(view);
+        getActivity().setTitle("Home");
         getSharedPrefValues();
         rvBreakfast.setHasFixedSize(true);
         rvBreakfast.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -343,7 +344,7 @@ public class HomeFragment extends Fragment {
                                         SharedPreferences preferences = getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
                                         SharedPreferences.Editor editor=preferences.edit();
                                         editor.putString(SharedPref.SpStatus,info.getUser_status());
-                                        StoredValues.userKey=memberDocumentKey;
+                                        editor.putString(SharedPref.SpUserKey,memberDocumentKey);
                                         editor.apply();
                                         isRemoved=false;
                                     }
@@ -413,14 +414,12 @@ public class HomeFragment extends Fragment {
                                             todaysDinner = todaysDinner + usersDinner;
 
                                             String name = data.getUser_name();
-                                            int breakfastMeal = data.getBreakfast();
-                                            int lunchMeal = data.getLunch();
-                                            int dinnerMeal = data.getDinner();
+                                            String time=data.getDate();
                                             Log.d("Log_User_Data_Loop", "Date : " + " " + " Lunch : " + data.getLunch());
 
-                                            PeriodicalMealModelClass breakfastData = new PeriodicalMealModelClass(name, breakfastMeal);
-                                            PeriodicalMealModelClass lunchData = new PeriodicalMealModelClass(name, lunchMeal);
-                                            PeriodicalMealModelClass dinnerData = new PeriodicalMealModelClass(name, dinnerMeal);
+                                            PeriodicalMealModelClass breakfastData = new PeriodicalMealModelClass(name, usersBreakfast,time);
+                                            PeriodicalMealModelClass lunchData = new PeriodicalMealModelClass(name, usersLunch,time);
+                                            PeriodicalMealModelClass dinnerData = new PeriodicalMealModelClass(name, usersDinner,time);
                                             listBreakFast.add(breakfastData);
                                             listLunch.add(lunchData);
                                             listDinner.add(dinnerData);
@@ -438,7 +437,6 @@ public class HomeFragment extends Fragment {
                                             int dinner = data.getDinner();
                                             int breakfast = data.getBreakfast();
                                             String bre = Integer.toString(breakfast);
-                                            Toast.makeText(getContext(), "Breakfast : " + bre, Toast.LENGTH_LONG).show();
                                             tvUserBreakfast.setText(Integer.toString(breakfast));
                                             tvUserLunch.setText(Integer.toString(lunch));
                                             tvUserDinner.setText(Integer.toString(dinner));

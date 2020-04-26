@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    style="?attr/actionButtonStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:focusable="true">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_option"/>
+
+    <TextView
+        android:id="@+id/notification_badge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="right|end|top"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginRight="-5dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/badge_background"
+        android:gravity="center"
+        android:padding="3dp"
+        android:textColor="@android:color/white"
+        android:text="0"
+        android:textSize="10sp"/>
+
+</FrameLayout>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="32dp"
+    android:layout_height="fill_parent"
+    android:layout_gravity="right" >
+
+
+ &lt;!&ndash;   <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:src="@drawable/ic_option"/>&ndash;&gt;
+    <TextView
+        android:id="@+id/notification_badge"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+
+        android:text=""
+        android:background="@drawable/badge_background"
+        android:textSize="10sp"
+        android:textColor="#ffffff"
+        />
+
+</RelativeLayout>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+   &lt;!&ndash; <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_warning"
+        />&ndash;&gt;
+    <TextView
+        android:id="@+id/notification_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/badge_background"
+
+        android:padding="3dp"
+        android:textColor="@android:color/white"
+        android:text="0"
+
+        android:textSize="10sp"/>
+</RelativeLayout>-->

@@ -11,4 +11,5 @@ public class SharedPref {
     public static final String SpMessKey="MessKey";
     public static final String SpMessName="MessNameKey";
     public static final String SpGender="GenderKey";
+    public static final String SpUserKey="UserKey";
 }

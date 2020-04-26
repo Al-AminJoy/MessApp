@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,6 +44,7 @@ public class MyDebitReqFragment extends Fragment {
     private MyDebitReqAdapter adapter;
     private ProgressDialog progressDialog;
     private TextView tvNoDataMessage;
+    private SwipeRefreshLayout swipeRefreshLayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +53,12 @@ public class MyDebitReqFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
         debitRef=db.document("messDatabase/debitRequest");
         initRecyclerView();
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData();
+            }
+        });
         loadData();
         return view;
     }
@@ -61,7 +69,8 @@ public class MyDebitReqFragment extends Fragment {
         progressDialog.show();
     }
     private void loadData() {
-        progressOp();
+        list.clear();
+        swipeRefreshLayout.setRefreshing(true);
         final SharedPreferences preferences=getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
 
         debitRef.collection("debitReqCollection")
@@ -86,13 +95,13 @@ public class MyDebitReqFragment extends Fragment {
                             if (list.size()==0){
                                 tvNoDataMessage.setVisibility(View.VISIBLE);
                                 tvNoDataMessage.setText("No Request Found");
-                                progressDialog.dismiss();
+                                swipeRefreshLayout.setRefreshing(false);
                             }
                             else {
                                 tvNoDataMessage.setVisibility(View.GONE);
                                 adapter=new MyDebitReqAdapter(getContext(),list);
                                 recyclerView.setAdapter(adapter);
-                                progressDialog.dismiss();
+                                swipeRefreshLayout.setRefreshing(false);
                             }
 
 
@@ -104,6 +113,7 @@ public class MyDebitReqFragment extends Fragment {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d("Failure","Exception: "+e);
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                 });
     }
@@ -111,10 +121,10 @@ public class MyDebitReqFragment extends Fragment {
     private void findId(View view) {
         recyclerView=view.findViewById(R.id.rvMyDebitRequestId);
         tvNoDataMessage=view.findViewById(R.id.tvMyDebitReqNoDataFoundId);
+        swipeRefreshLayout=view.findViewById(R.id.swipeMyDebitReqId);
     }
 
     private void initRecyclerView() {
-
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }

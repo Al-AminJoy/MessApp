@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,6 +42,7 @@ public class MyUpdateReqFragment extends Fragment {
     private MyUpdateReqAdapter adapter;
     private ProgressDialog progressDialog;
     private TextView tvNoDataMessage;
+    private SwipeRefreshLayout refreshLayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +51,12 @@ public class MyUpdateReqFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
         updateRef=db.document("messDatabase/updateRequest");
         initRecyclerView();
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData();
+            }
+        });
         loadData();
         return view;
     }
@@ -59,9 +67,9 @@ public class MyUpdateReqFragment extends Fragment {
         progressDialog.show();
     }
     private void loadData() {
-        progressOp();
+        list.clear();
+        refreshLayout.setRefreshing(true);
         final SharedPreferences preferences=getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
-
         updateRef.collection("updateReqCollection")
                 .whereEqualTo("mess_key",preferences.getString(SharedPref.SpMessKey,""))
                 .whereEqualTo("user_email",preferences.getString(SharedPref.SpEmail,""))
@@ -84,13 +92,13 @@ public class MyUpdateReqFragment extends Fragment {
                             if (list.size()==0){
                                 tvNoDataMessage.setVisibility(View.VISIBLE);
                                 tvNoDataMessage.setText("No Request Found");
-                                progressDialog.dismiss();
+                                refreshLayout.setRefreshing(false);
                             }
                             else {
                                 tvNoDataMessage.setVisibility(View.GONE);
                                 adapter=new MyUpdateReqAdapter(getContext(),list);
                                 recyclerView.setAdapter(adapter);
-                                progressDialog.dismiss();
+                                refreshLayout.setRefreshing(false);
                             }
 
 
@@ -102,6 +110,7 @@ public class MyUpdateReqFragment extends Fragment {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d("Failure","Exception: "+e);
+                        refreshLayout.setRefreshing(false);
                     }
                 });
     }
@@ -109,10 +118,12 @@ public class MyUpdateReqFragment extends Fragment {
     private void findId(View view) {
         recyclerView=view.findViewById(R.id.rvMyUpdateRequestId);
         tvNoDataMessage=view.findViewById(R.id.tvMyUpdateReqNoDataFoundId);
+        refreshLayout=view.findViewById(R.id.swipeMyUpdateReq);
     }
 
     private void initRecyclerView() {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
     }
 }

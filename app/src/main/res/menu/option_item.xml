@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item android:title="Debit Request"
-    android:id="@+id/option_debit_req_id"
-    app:showAsAction="never"/>
+    <item android:title="Debit Request"
+        android:id="@+id/option_debit_req_id"
+        app:showAsAction="never"/>
 
     <item android:title="Update Request"
         android:id="@+id/option_update_req_id"
         app:showAsAction="never"/>
-
     <item android:title="Join Request"
         android:id="@+id/option_join_req_id"
+        app:showAsAction="never"/>
+
+    <item android:title="Left Group"
+        android:id="@+id/option_left_id"
         app:showAsAction="never"/>
 </menu>

@@ -22,6 +22,7 @@ public class PreviousMonthFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_previous_month, container, false);
         findId(view);
+        getActivity().setTitle("Last Month Status");
         vpPrevMonthAdapter=new ViewPagerAdapter(getChildFragmentManager());
         vpPrevMonthAdapter.AddFragment(new PrevMonthTotalOverviewFragment(),"Total Overview");
         vpPrevMonthAdapter.AddFragment(new PrevMonthIndividualOverviewFragment(),"Individual Overview");

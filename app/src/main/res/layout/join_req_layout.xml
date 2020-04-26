@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/margin10dp"
+    android:layout_marginLeft="@dimen/margin16dp"
+    android:layout_marginRight="@dimen/margin16dp"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen4dp"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardElevation="@dimen/dimen2dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/basicColor"
+            android:padding="@dimen/padding14dp"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin2dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/dimen100dp"
+                    android:layout_height="@dimen/dimen100dp"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:padding="15dp"
+                    android:paddingBottom="5dp"
+                    android:src="@drawable/profile" />
+                <LinearLayout
+                    android:id="@+id/linLayDetailsID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/tvJoinReqNameId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding6dp"
+                        android:text="Al-Amin Islam Joy"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvJoinReqGenderId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding6dp"
+                        android:text="Male"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvJoinReqEmailId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding6dp"
+                        android:text="alaminislam@gmail.com"
+                        android:layout_gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:layout_height="wrap_content">
+                <ProgressBar
+                    android:id="@+id/pbJoinReqId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:layout_marginLeft="@dimen/margin18dp"
+                    android:layout_marginRight="@dimen/margin18dp"
+                    android:indeterminateDrawable="@drawable/log_in_progress_color"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    />
+                <LinearLayout
+                    android:id="@+id/linLayButtonsJoinReq"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btJoinReqConfirmId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Accept"
+                        android:padding="@dimen/padding4dp"
+                        android:textColor="@color/whiteColor"
+                        android:backgroundTint="@color/submitButtonColor"
+                        app:rippleColor="@color/whiteColor"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/textSizeM"
+                        />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btJoinReqCancelId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Delete"
+                        android:padding="@dimen/padding4dp"
+                        android:textColor="@color/whiteColor"
+                        android:backgroundTint="@color/submitButtonColor"
+                        app:rippleColor="@color/whiteColor"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/textSizeM"
+                        android:layout_marginTop="@dimen/margin8dp"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

@@ -11,8 +11,10 @@
         <item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>
         <!-- To change the background of options menu-->
         <item name="android:itemBackground">@color/basicColor</item>
+        For Overflow Icon
         <item name="actionOverflowButtonStyle">@style/OverFlow</item>
     </style>
+    <!-- For Overflow Icon -->
     <style name="OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_option</item>
 

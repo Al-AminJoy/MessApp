@@ -22,7 +22,7 @@ public class MyRequestFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_my_request, container, false);
         findId(view);
-
+        getActivity().setTitle("My Request List");
         adapter=new MyStatVPAdapter(getChildFragmentManager());
         adapter.AddFragment( new MyDebitReqFragment(),"Expense Request");
         adapter.AddFragment(new MyUpdateReqFragment(),"Update Request");

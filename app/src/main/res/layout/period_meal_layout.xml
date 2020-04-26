@@ -5,31 +5,47 @@
     android:layout_width="match_parent"
     android:background="@color/basicColor"
     android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tvPeriodLayNameId"
-        android:layout_toLeftOf="@id/tvPeriodLayMealId"
-        android:paddingLeft="@dimen/padding10dp"
-        android:paddingRight="@dimen/padding10dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Al-Amin Islam Joy"
-        android:paddingTop="@dimen/padding6dp"
-        android:paddingBottom="@dimen/padding6dp"
-        android:textColor="@color/whiteColor"
-        android:layout_alignParentStart="true"
-        />
-    <TextView
-        android:id="@+id/tvPeriodLayMealId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="01"
-        android:paddingTop="@dimen/padding6dp"
-        android:paddingBottom="@dimen/padding6dp"
-        android:textColor="@color/whiteColor"
-        android:layout_alignParentEnd="true"
-        android:paddingLeft="@dimen/padding10dp"
-        android:paddingRight="@dimen/padding10dp"
-        />
+        android:padding="@dimen/padding8dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="6"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvPeriodLayNameId"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Al-Amin Islam Joy"
+            android:gravity="left"
+            android:layout_marginRight="@dimen/margin8dp"
+            android:textColor="@color/whiteColor"
+            />
+        <TextView
+            android:id="@+id/tvPeriodLayMealId"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="01"
+            android:gravity="start"
+            android:layout_marginLeft="@dimen/margin8dp"
+            android:layout_marginRight="@dimen/margin8dp"
+            android:textColor="@color/whiteColor"
+            />
+        <TextView
+            android:id="@+id/tvPeriodLayTimeId"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="01"
+            android:gravity="right"
+            android:layout_marginLeft="@dimen/margin8dp"
+            android:textColor="@color/whiteColor"
+            />
+
+    </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

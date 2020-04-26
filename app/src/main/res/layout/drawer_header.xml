@@ -15,16 +15,19 @@
             android:layout_width="@dimen/dimen80dp"
             android:layout_height="@dimen/dimen80dp"
             android:src="@drawable/profile"
+            android:layout_gravity="start"
             />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvDrawerHeaderNameId"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Al-Amin Islam Joy"
             android:textSize="@dimen/textSizeM"
             android:textStyle="bold"
             android:textColor="@color/whiteColor"
             android:layout_marginTop="@dimen/margin16dp"
+            android:layout_gravity="start"
             />
     </LinearLayout>
 

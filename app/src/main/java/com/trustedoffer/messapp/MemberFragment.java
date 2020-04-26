@@ -43,6 +43,7 @@ public class MemberFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_member, container, false);
         findId(view);
+        getActivity().setTitle("Members");
         initRecyclerView();
         loadData();
         return view;
@@ -59,39 +60,9 @@ public class MemberFragment extends Fragment {
         progressDialog.show();
     }
     private void loadData() {
-        progressOp();
-       /* ref.collection("userInfoCollection").get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                MemberInfoModelClass info= document.toObject(MemberInfoModelClass.class);
-
-                                String userMessKey=info.getMess_key();
-                                String email=info.getUser_email();
-                                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
-                                String key=sharedPreferences.getString(SharedPref.SpMessKey,"");
-                                Log.d("Log_Tag","Name : "+key+" Email : "+email);
-                                if (userMessKey.equals(key)){
-                                    Log.d("Add_Data_Log_Tag","Name : "+info.getUser_name()+" Email : "+info.getUser_email());
-                                    info.setKey(document.getId());
-                                    listItem.add(info);
-                                }
-                            }
-                            adapter=new MemberAdapter(getContext(),listItem);
-                            recyclerView.setAdapter(adapter);
-                            progressDialog.dismiss();
-
-                        } else {
-                        }
-                    }
-                });*/
         listItem= StoredValues.memberInfo;
         adapter=new MemberAdapter(getContext(),listItem);
         recyclerView.setAdapter(adapter);
-        progressDialog.dismiss();
-
     }
 
     private void findId(View view) {

@@ -119,6 +119,10 @@ public class MyStatDailyOverViewFragment extends Fragment implements View.OnClic
         }
     }
     private void showUpdateDialog() {
+        selectedDay=0;
+        selectedMonth=0;
+        selectedyear=0;
+        preDebit=0;
         LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
         View dialogView = layoutInflater.inflate(R.layout.update_data_dialog, null);
         String[] breakfast,lunch,dinner;
@@ -264,6 +268,7 @@ public class MyStatDailyOverViewFragment extends Fragment implements View.OnClic
                         selectedMonth=(month+1);
                         selectedyear=year;
                         list=StoredValues.userData;
+
                         for (UserDataModelClass data:list){
 
                             if (selectedDay==data.getDay() && selectedMonth==StoredValues.month && selectedyear==StoredValues.year){

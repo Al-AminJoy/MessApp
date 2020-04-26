@@ -11,7 +11,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="debitWarning">Note :\n Meal Will Be Added \nBut Admin Will Approve Debit</string>
     <string name="updateWarning">Are You Sure\n Want To Send Update \nRequest To Admin ?</string>
-    <string name="remove_warning">Note : \nAll Data of This User\nWill Be Lost</string>
+    <string name="remove_warning">Note : \nAll Data of This User\nWill Be Invisible\nBut Data Will Not Lost</string>
     <string-array name="Breakfast">
 
         <item>0</item>

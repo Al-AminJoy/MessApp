@@ -38,6 +38,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_profile, container, false);
         findId(view);
+        getActivity().setTitle("Profile");
         setViews();
         ibtEdite.setOnClickListener(this);
         return view;
@@ -161,7 +162,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void update(final String updatedName, final String updateNumber, final String updateGender, final ProgressBar progressBar, final MaterialButton btSave, final AlertDialog alertDialog) {
         progressBar.setVisibility(View.VISIBLE);
         btSave.setVisibility(View.GONE);
-        FirebaseFirestore.getInstance().document("messDatabase/userInfo/userInfoCollection/"+""+StoredValues.userKey).update("user_name",updatedName,"user_number",updateNumber,"gender",updateGender).addOnSuccessListener(new OnSuccessListener<Void>() {
+        SharedPreferences spUpdate = this.getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
+        String userKey=spUpdate.getString(SharedPref.SpName,"");
+        FirebaseFirestore.getInstance().document("messDatabase/userInfo/userInfoCollection/"+""+userKey).update("user_name",updatedName,"user_number",updateNumber,"gender",updateGender).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(getContext(),"Success",Toast.LENGTH_SHORT).show();

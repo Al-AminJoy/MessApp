@@ -21,7 +21,4 @@ public class StoredValues {
     public static  double mealRate;
 
     public static double addDebit=0.00;
-
-    public static String userKey="";
-
 }

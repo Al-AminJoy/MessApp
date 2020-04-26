@@ -63,7 +63,7 @@ public class AddMealFragment extends Fragment implements View.OnClickListener {
     private int selectedMonth,selectedYear,selectedDay;
     private FirebaseFirestore db;
     private DocumentReference ref,debitRef;
-    private List<UserDataModelClass> list=new ArrayList<>();
+    private List<UserDataModelClass> listMeal=new ArrayList<>();
     private int todaysBreakfast;
     private int todaysLunch;
     private int todaysDinner;
@@ -75,7 +75,7 @@ public class AddMealFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_meal, container, false);
         findId(view);
-
+        getActivity().setTitle("Add Data");
         db = FirebaseFirestore.getInstance();
         ref = db.document("messDatabase/userData");
         debitRef = db.document("messDatabase/debitRequest");
@@ -95,17 +95,6 @@ public class AddMealFragment extends Fragment implements View.OnClickListener {
 
         return view;
     }
-   /* @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
-    }*/
-   /* @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
-    }
-*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -164,12 +153,16 @@ public class AddMealFragment extends Fragment implements View.OnClickListener {
     }
 
     private void postData() {
+        inputDebit=0;
+        selectedDay=0;
+        selectedMonth=0;
+        selectedYear=0;
         SharedPreferences shp=getActivity().getSharedPreferences(SharedPref.AppPackage, Context.MODE_PRIVATE);
         String email=shp.getString(SharedPref.SpEmail,"");
         boolean exist=false;
         if (selectedDay>0 ){
-            list=StoredValues.messThisMonthData;
-            for (UserDataModelClass data:list){
+            listMeal=StoredValues.messThisMonthData;
+            for (UserDataModelClass data:listMeal){
                 if (selectedDay==data.getDay() && email.equals(data.getUser_email())){
                     exist=true;
                     break;
@@ -224,8 +217,8 @@ public class AddMealFragment extends Fragment implements View.OnClickListener {
                                 pbAddMeal.setVisibility(View.GONE);
                                 btAddMeal.setVisibility(View.VISIBLE);
                                 Toast.makeText(getContext(),"Success",Toast.LENGTH_SHORT).show();
-                                list.add(user);
-                                StoredValues.messThisMonthData=list;
+                                listMeal.add(user);
+                                StoredValues.messThisMonthData=listMeal;
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -285,8 +278,8 @@ public class AddMealFragment extends Fragment implements View.OnClickListener {
                         pbAddMeal.setVisibility(View.GONE);
                         btAddMeal.setVisibility(View.VISIBLE);
                         Toast.makeText(getContext(),"Success",Toast.LENGTH_SHORT).show();
-                        list.add(user);
-                        StoredValues.messThisMonthData=list;
+                        listMeal.add(user);
+                        StoredValues.messThisMonthData=listMeal;
 
                     }
                 })

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/menu_home_id"
@@ -12,16 +13,17 @@
             android:iconTint="@color/submitButtonColor"
 
             />
+        <item android:id="@+id/menu_add_meal_id"
+            android:icon="@drawable/ic_meal"
+            android:title="Add Data"
+            />
         <item android:id="@+id/menu_member_id"
             android:icon="@drawable/ic_members"
             android:title="Members"
             android:iconTint="#9CA635"
 
             />
-        <item android:id="@+id/menu_add_meal_id"
-            android:icon="@drawable/ic_meal"
-            android:title="Add Meal"
-            />
+
        <!-- <item android:id="@+id/menu_add_debit_id"
             android:icon="@drawable/ic_ad_debit"
             android:title="Add Debit"
@@ -30,13 +32,13 @@
             android:icon="@drawable/ic_account"
             android:title="My Status"
             />
-        <item android:id="@+id/menu_others_status_id"
-            android:icon="@drawable/ic_others_status"
-            android:title="Others Status"
-            />
         <item android:id="@+id/menu_req_id"
             android:icon="@drawable/ic_ad_debit"
-            android:title="My Request"
+            android:title="My Request List"
+            />
+        <item android:id="@+id/menu_others_status_id"
+            android:icon="@drawable/ic_others_status"
+            android:title="Everyone's Status"
             />
         <!--<item android:id="@+id/menu_update_request_id"
             android:icon="@drawable/ic_update"
@@ -44,7 +46,7 @@
             />-->
         <item android:id="@+id/menu_previous_month_id"
             android:icon="@drawable/ic_previous_month"
-            android:title="Previous Month Status"
+            android:title="Last Month Status"
             />
     </group>
 
