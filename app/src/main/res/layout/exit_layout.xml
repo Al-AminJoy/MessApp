@@ -66,7 +66,7 @@
             android:padding="@dimen/padding10dp"
             android:textColor="@color/whiteColor"
             android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
+            app:rippleColor="@color/blackColor"
             android:layout_margin="@dimen/margin10dp"
             app:cornerRadius="@dimen/padding10dp"
             />
@@ -80,7 +80,7 @@
             android:padding="@dimen/padding10dp"
             android:textColor="@color/whiteColor"
             android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
+            app:rippleColor="@color/blackColor"
             />
     </LinearLayout>
 

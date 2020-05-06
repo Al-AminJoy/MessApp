@@ -4,12 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".ProfileFragment">
+    tools:context=".Fragment.ProfileFragment">
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/profile_content"
         />
-
-
 </androidx.drawerlayout.widget.DrawerLayout>

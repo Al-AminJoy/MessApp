@@ -11,6 +11,7 @@
         android:background="@color/basicColor"
         app:popupTheme="@style/Theme"
         style="@style/Theme"
-        android:elevation="4dp"/>
-    <!--  android:theme="@style/Theme"-->
+        app:titleTextAppearance="@style/yourstyle"
+        android:elevation="@dimen/dimen4dp"/>
+
 </LinearLayout>

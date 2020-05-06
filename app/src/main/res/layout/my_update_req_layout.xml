@@ -214,7 +214,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Debit"
+                    android:text="Expense"
                     android:textColor="@color/whiteColor"
                     android:padding="@dimen/padding4dp"
                     android:textSize="@dimen/textSizeM"

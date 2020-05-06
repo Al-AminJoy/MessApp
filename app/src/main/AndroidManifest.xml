@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trustedoffer.messapp">
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JoinMessActivity"></activity>
+        <activity android:name=".Activity.StartActivity"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+        <activity android:name=".Activity.JoinMessActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".LogInActivity"
+            android:name=".Activity.SplashActivity"
+            android:theme="@style/AppTheme.Launcher"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,14 +33,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".RegisterActivity" />
+            android:name=".Activity.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".Service.MyMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
 </manifest>

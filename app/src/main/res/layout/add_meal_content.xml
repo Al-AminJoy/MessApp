@@ -37,8 +37,7 @@
                     android:layout_marginRight="20dp"
                     style="?android:selectableItemBackground"
                     android:id="@+id/cvAddMealDatePickerId"
-                    android:background="@drawable/border"
-                    android:backgroundTint="@color/submitButtonColor"
+                    android:backgroundTint="@color/whiteColor"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -48,8 +47,6 @@
                         android:gravity="center"
                         android:padding="5dp"
                         android:layout_margin="1dp"
-
-
                         >
                         <ImageView
                             android:layout_width="50dp"
@@ -77,9 +74,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -91,7 +85,6 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:weightSum="3"
-
                     >
 
                     <LinearLayout
@@ -125,9 +118,7 @@
 
                             </Spinner>
 
-
                         </LinearLayout>
-
 
                     </LinearLayout>
 
@@ -137,7 +128,6 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="horizontal"
-
                         >
 
                         <View
@@ -145,14 +135,12 @@
                             android:layout_height="match_parent"
                             android:layout_marginRight="5dp"
                             android:background="@color/whiteColor"
-
                             />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-
                             >
 
                             <TextView
@@ -171,7 +159,6 @@
                                 android:layout_marginLeft="25dp"
                                 android:backgroundTint="@color/whiteColor"
                                 tools:listitem="@layout/spinner_layout">
-
                             </Spinner>
 
                         </LinearLayout>
@@ -229,7 +216,7 @@
                     android:layout_marginTop="@dimen/margin8dp"
                     android:background="@color/whiteColor"
                     android:padding="@dimen/padding4dp"
-                    android:hint="Debit Amount"
+                    android:hint="Expense"
                     app:hintTextColor="@color/submitButtonColor"
                     app:boxStrokeColor="@color/submitButtonColor"
                     >
@@ -276,7 +263,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="center"
                app:cornerRadius="@dimen/margin4dp"
-               app:rippleColor="@color/whiteColor"
+               app:rippleColor="@color/blackColor"
                android:backgroundTint="@color/basicColor"
                android:padding="@dimen/padding16dp"
                android:text="Add"

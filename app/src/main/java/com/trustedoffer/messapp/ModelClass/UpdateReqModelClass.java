@@ -12,7 +12,7 @@ public class UpdateReqModelClass {
     public UpdateReqModelClass() {
     }
 
-    public UpdateReqModelClass(String user_name, String user_email, String mess_key, String request_time, String approved_by, String approve_time, int breakfast, int lunch, int dinner, int day, int month, int year, int preBreakfast, int preLunch, int preDinner, Double debit, Double preDebit, boolean approved) {
+    public UpdateReqModelClass(String user_name, String user_email, String mess_key, String request_time, String approved_by, String approve_time, int breakfast, int lunch, int dinner, int day, int month, int year, int preBreakfast, int preLunch, int preDinner, Double debit, Double preDebit, boolean approved, String key) {
         this.user_name = user_name;
         this.user_email = user_email;
         this.mess_key = mess_key;
@@ -31,6 +31,7 @@ public class UpdateReqModelClass {
         this.debit = debit;
         this.preDebit = preDebit;
         this.approved = approved;
+        this.key = key;
     }
 
     public String getUser_name() {
@@ -108,9 +109,4 @@ public class UpdateReqModelClass {
     public String getKey() {
         return key;
     }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
 }

@@ -39,7 +39,7 @@
             android:padding="@dimen/padding14dp"
             android:textColor="@color/whiteColor"
             android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
+            app:rippleColor="@color/blackColor"
             android:layout_margin="@dimen/margin2dp"
             />
         <com.google.android.material.button.MaterialButton
@@ -52,7 +52,7 @@
             android:padding="@dimen/padding14dp"
             android:textColor="@color/whiteColor"
             android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
+            app:rippleColor="@color/blackColor"
             />
     </LinearLayout>
 

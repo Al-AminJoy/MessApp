@@ -9,19 +9,7 @@
         android:layout_width="match_parent"
         android:paddingTop="@dimen/padding2dp"
         android:layout_height="wrap_content">
-       <!-- <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pending Request"
-            android:layout_alignParentLeft="true"
-            android:textColor="@color/whiteColor"
-            android:textSize="@dimen/textSizeL"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
-            android:paddingLeft="@dimen/padding16dp"
-            android:gravity="center"
-            />-->
+
         <ImageButton
             android:id="@+id/ibtMyMessReqDialogCloseId"
             android:layout_width="wrap_content"
@@ -44,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/textSizeXL"
-            android:text="Pending Request"
+            android:text="Pending Request !"
             android:layout_gravity="center"
             android:textColor="@color/redColor"
             />
@@ -80,12 +68,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cancel"
-                android:padding="@dimen/padding8dp"
+                android:padding="@dimen/padding14dp"
                 android:textColor="@color/whiteColor"
                 android:backgroundTint="@color/submitButtonColor"
-                app:rippleColor="@color/basicColor"
-                android:layout_marginLeft="@dimen/margin24dp"
-                android:layout_marginRight="@dimen/margin24dp"
+                app:rippleColor="@color/blackColor"
+                android:layout_marginLeft="@dimen/margin32dp"
+                android:layout_marginRight="@dimen/margin32dp"
+                android:layout_marginTop="@dimen/margin18dp"
                 app:strokeColor="@color/whiteColor"
                 app:strokeWidth="1dp"
                 android:textSize="@dimen/textSizeM"

@@ -22,13 +22,11 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivMemberImageId"
                 android:layout_width="@dimen/dimen100dp"
                 android:layout_height="@dimen/dimen100dp"
-                android:layout_marginLeft="10dp"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:padding="15dp"
-                android:paddingBottom="5dp"
+                android:layout_marginLeft="@dimen/margin8dp"
+                android:padding="@dimen/padding16dp"
                 android:src="@drawable/profile" />
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -47,13 +45,13 @@
                         android:padding="@dimen/padding6dp"
                         android:text="Al-Amin Islam Joy"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/textSizeM"
                         android:layout_gravity="start"
                         android:textStyle="bold" />
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dimen2dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginRight="@dimen/margin8dp"
                         android:background="@color/whiteColor"
 
                         />
@@ -65,7 +63,7 @@
                         android:text="Admin"
                         android:layout_gravity="start"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/textSizeM"
                         android:textStyle="bold" />
 
                 </LinearLayout>

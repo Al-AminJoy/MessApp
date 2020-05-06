@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PrevMonthTotalOverviewFragment">
+    tools:context=".Fragment.PrevMonthTotalOverviewFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,8 +14,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="3dp"
+            app:cardElevation="@dimen/dimen4dp"
+            app:cardCornerRadius="@dimen/dimen2dp"
             android:layout_marginTop="@dimen/margin10dp"
             android:layout_marginRight="@dimen/margin16dp"
             android:layout_marginLeft="@dimen/margin16dp"
@@ -28,10 +28,10 @@
                 android:layout_height="wrap_content"
                 android:text="September"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp"
+                android:textSize="@dimen/textSizeM"
                 android:gravity="center"
                 android:background="@color/basicColor"
-                android:padding="10dp"
+                android:padding="@dimen/padding14dp"
                 android:textStyle="bold"
                 />
 
@@ -50,10 +50,11 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="3dp"
+                    app:cardElevation="@dimen/dimen4dp"
+                    app:cardCornerRadius="@dimen/dimen2dp"
                     android:layout_marginRight="@dimen/margin16dp"
                     android:layout_marginLeft="@dimen/margin16dp"
+                    app:cardBackgroundColor="@color/whiteColor"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -61,10 +62,11 @@
                         android:weightSum="2"
                         android:orientation="horizontal"
                         android:background="@color/basicColor"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:paddingTop="80dp"
-                        android:paddingBottom="80dp"
+                        android:paddingLeft="@dimen/padding8dp"
+                        android:paddingRight="@dimen/padding8dp"
+                        android:paddingTop="@dimen/padding64dp"
+                        android:paddingBottom="@dimen/padding64dp"
+                        android:layout_margin="@dimen/margin2dp"
                         >
                         <LinearLayout
                             android:layout_width="0dp"
@@ -74,20 +76,20 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Total Debit"
+                                android:text="Total Expense"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/textSizeM"
                                 android:textStyle="bold"
                                 />
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:background="@color/whiteColor"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="@dimen/margin8dp"
+                                android:layout_marginRight="@dimen/margin8dp"
+                                android:layout_marginTop="@dimen/margin4dp"
+                                android:layout_marginBottom="@dimen/margin4dp"
                                 />
                             <TextView
                                 android:id="@+id/tvPrevMonthTotalDebitId"
@@ -96,7 +98,7 @@
                                 android:text="--"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/textSizeM"
                                 android:textStyle="bold"
                                 />
                             <TextView
@@ -105,7 +107,7 @@
                                 android:text="Total Meal"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/textSizeM"
                                 android:textStyle="bold"
                                 android:layout_marginTop="@dimen/margin32dp"
                                 />
@@ -113,10 +115,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:background="@color/whiteColor"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="@dimen/margin8dp"
+                                android:layout_marginRight="@dimen/margin8dp"
+                                android:layout_marginTop="@dimen/margin4dp"
+                                android:layout_marginBottom="@dimen/margin4dp"
                                 />
                             <TextView
                                 android:id="@+id/tvPrevMonthTotalMealId"
@@ -125,12 +127,9 @@
                                 android:text="--"
                                 android:gravity="center"
                                 android:textColor="@color/whiteColor"
-                                android:textSize="15sp"
+                                android:textSize="@dimen/textSizeM"
                                 android:textStyle="bold"
                                 />
-
-
-
 
                         </LinearLayout>
 
@@ -143,38 +142,31 @@
                                 android:layout_width="1dp"
                                 android:layout_height="match_parent"
                                 android:background="@color/whiteColor"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-
+                                android:layout_marginLeft="@dimen/margin8dp"
+                                android:layout_marginRight="@dimen/margin8dp"
                                 />
-
-
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 >
-
-
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="Meal Rate"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/textSizeM"
                                     android:textStyle="bold"
                                     />
                                 <View
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:background="@color/whiteColor"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginLeft="@dimen/margin8dp"
+                                    android:layout_marginRight="@dimen/margin8dp"
+                                    android:layout_marginTop="@dimen/margin4dp"
+                                    android:layout_marginBottom="@dimen/margin4dp"
                                     />
                                 <TextView
                                     android:id="@+id/tvPrevMonthMealRateId"
@@ -183,16 +175,16 @@
                                     android:text="--"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/textSizeM"
                                     android:textStyle="bold"
                                     />
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Balanced Status"
+                                    android:text="Status"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/textSizeM"
                                     android:textStyle="bold"
                                     android:layout_marginTop="@dimen/margin32dp"
                                     />
@@ -200,10 +192,10 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
                                     android:background="@color/whiteColor"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginLeft="@dimen/margin8dp"
+                                    android:layout_marginRight="@dimen/margin8dp"
+                                    android:layout_marginTop="@dimen/margin4dp"
+                                    android:layout_marginBottom="@dimen/margin4dp"
                                     />
                                 <TextView
                                     android:id="@+id/tvPrevMonthTotalExpenseId"
@@ -212,42 +204,17 @@
                                     android:text="--"
                                     android:gravity="center"
                                     android:textColor="@color/whiteColor"
-                                    android:textSize="15sp"
+                                    android:textSize="@dimen/textSizeM"
                                     android:textStyle="bold"
                                     />
                             </LinearLayout>
 
-
-
                         </LinearLayout>
-
-
-
                     </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:cardElevation="3dp"
-                    app:cardCornerRadius="3dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginLeft="30dp"
-                    >
-
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
-
         </ScrollView>
-
-
     </LinearLayout>
-
-
-
-
 </RelativeLayout>

@@ -31,16 +31,13 @@
             style="?android:selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/margin18dp"
+            android:layout_marginTop="@dimen/margin4dp"
+            android:layout_marginRight="@dimen/margin18dp"
+            android:layout_marginBottom="@dimen/margin8dp"
             android:clickable="true"
-            android:background="@drawable/border"
-            android:backgroundTint="@color/submitButtonColor"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="3dp">
-
+            app:cardBackgroundColor="@color/whiteColor"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,14 +45,12 @@
                 android:background="@color/basicColor"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="5dp"
-
-
+                android:padding="@dimen/padding8dp"
                 >
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="@dimen/dimen48dp"
+                    android:layout_height="@dimen/dimen48dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/ic_date" />
@@ -64,24 +59,21 @@
                     android:id="@+id/tvAddMealDateShowerDialogId"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/margin8dp"
                     android:gravity="center"
-                    android:padding="5dp"
+                    android:padding="@dimen/padding8dp"
                     android:text="Peak Date"
                     android:textColor="@color/whiteColor"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/textSizeM"
                     android:textStyle="bold"
-
                     />
-
             </LinearLayout>
-
 
         </androidx.cardview.widget.CardView>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="@dimen/margin4dp"
             android:background="@color/whiteColor" />
 
         <LinearLayout
@@ -89,9 +81,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="3"
-
             >
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -110,26 +100,19 @@
                         android:layout_height="wrap_content"
                         android:text="Breakfast"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/textSizeM" />
                     <Spinner
                         android:id="@+id/spDialogBreakfastId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/whiteColor"
                         tools:listitem="@layout/spinner_layout"
-
                         >
-
                     </Spinner>
-
-
-
 
                 </LinearLayout>
 
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -146,10 +129,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:text="Lunch"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/textSizeM" />
                     <Spinner
                         android:id="@+id/spDialogLunchId"
                         android:layout_width="match_parent"
@@ -157,17 +139,9 @@
                         android:layout_gravity="center"
                         android:backgroundTint="@color/whiteColor"
                         tools:listitem="@layout/spinner_layout">
-
                     </Spinner>
-
-
-
                 </LinearLayout>
-
-
-
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -175,35 +149,25 @@
                 android:gravity="center"
                 android:padding="@dimen/padding14dp"
                 android:orientation="horizontal">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Dinner"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/textSizeM" />
                     <Spinner
                         android:id="@+id/spDialogDinnerId"
                         android:layout_width="match_parent"
                         android:backgroundTint="@color/whiteColor"
                         android:layout_height="wrap_content"
                         tools:listitem="@layout/spinner_layout">
-
                     </Spinner>
-
-
-
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
         </LinearLayout>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -212,7 +176,7 @@
             android:layout_marginTop="@dimen/margin8dp"
             android:background="@color/whiteColor"
             android:padding="@dimen/padding4dp"
-            android:hint="Debit Amount"
+            android:hint="Expense"
             app:hintTextColor="@color/submitButtonColor"
             app:boxStrokeColor="@color/submitButtonColor"
             >
@@ -254,12 +218,10 @@
                 android:padding="@dimen/padding14dp"
                 android:textColor="@color/whiteColor"
                 android:backgroundTint="@color/submitButtonColor"
-                app:rippleColor="@color/whiteColor"
+                app:rippleColor="@color/blackColor"
                 />
         </RelativeLayout>
 
     </LinearLayout>
-
-
         </LinearLayout>
 

@@ -30,50 +30,54 @@ public class PeriodMealAdapter extends RecyclerView.Adapter<PeriodMealAdapter.Pe
     @NonNull
     @Override
     public PeriodMealAdapter.PeriodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.period_meal_layout,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.period_meal_layout, parent, false);
         return new PeriodViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PeriodMealAdapter.PeriodViewHolder holder, int position) {
-        PeriodicalMealModelClass data=list.get(position);
-        String name=data.getName();
-        int meal=data.getMeal();
-        String date=data.getTime();
-        showTime(date,holder.tvTime);
+        PeriodicalMealModelClass data = list.get(position);
+        String name = data.getName();
+        int meal = data.getMeal();
+        String date = data.getTime();
+        showTime(date, holder.tvTime);
 
         holder.tvName.setText(name);
         holder.tvMeal.setText(Integer.toString(meal));
     }
 
     private void showTime(String date, TextView tvTime) {
-        String[] dateSplit=new String[1];
-        dateSplit=date.split(" ");
-        String time=dateSplit[1];
-        String[] times=new String[2];
-        times=time.split(":");
-        String hour=times[0];
-        int hourTime=Integer.parseInt(hour);
-        if (hourTime>=12){
-            if (hourTime==12){
-                tvTime.setText("12:"+times[1]+" PM");
-            }
-            else {
-                int convertHour=(hourTime-12);
-                if (convertHour<10){
-                    tvTime.setText("0"+Integer.toString(convertHour)+":"+times[1]+" PM");
+        String[] dateSplit = new String[2];
+        dateSplit = date.split(" ");
+        //Finding Day and Month
+        String addedDate=dateSplit[0];
+        String[] dates=new String[3];
+        dates=addedDate.split("-");
+        String day=dates[2];
+        String month=dates[1];
+        //Find Hour and Min
+        String time = dateSplit[1];
+        String[] times = new String[2];
+        times = time.split(":");
+        String hour = times[0];
+        int hourTime = Integer.parseInt(hour);
+        if (hourTime >= 12) {
+            if (hourTime == 12) {
+                tvTime.setText("12:" + times[1] + " PM ("+day+")");
+            } else {
+                //Convert Time in 12 Hour Formate
+                int convertHour = (hourTime - 12);
+                if (convertHour < 10) {
+                    tvTime.setText("0" + Integer.toString(convertHour) + ":" + times[1] + " PM ("+day+")");
+                } else {
+                    tvTime.setText(Integer.toString(convertHour) + ":" + times[1] + " PM ("+day+")");
                 }
-                else {
-                    tvTime.setText(Integer.toString(convertHour)+":"+times[1]+" PM");
-                }
             }
-        }
-        else {
-            if (hourTime==0){
-                tvTime.setText("12:"+times[1]+" AM");
-            }
-            else {
-                tvTime.setText(hour+":"+times[1]+" AM");
+        } else {
+            if (hourTime == 0) {
+                tvTime.setText("12:" + times[1] + " AM ("+day+")");
+            } else {
+                tvTime.setText(hour + ":" + times[1] + " AM ("+day+")");
             }
 
         }
@@ -85,12 +89,13 @@ public class PeriodMealAdapter extends RecyclerView.Adapter<PeriodMealAdapter.Pe
     }
 
     public class PeriodViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvName,tvMeal,tvTime;
+        private TextView tvName, tvMeal, tvTime;
+
         public PeriodViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName=itemView.findViewById(R.id.tvPeriodLayNameId);
-            tvMeal=itemView.findViewById(R.id.tvPeriodLayMealId);
-            tvTime=itemView.findViewById(R.id.tvPeriodLayTimeId);
+            tvName = itemView.findViewById(R.id.tvPeriodLayNameId);
+            tvMeal = itemView.findViewById(R.id.tvPeriodLayMealId);
+            tvTime = itemView.findViewById(R.id.tvPeriodLayTimeId);
         }
     }
 }

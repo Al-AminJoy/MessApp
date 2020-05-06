@@ -19,8 +19,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        app:cardCornerRadius="3dp"
+        app:cardElevation="@dimen/dimen2dp"
+        app:cardCornerRadius="@dimen/dimen4dp"
         android:layout_marginTop="@dimen/margin10dp"
         android:layout_marginRight="@dimen/margin16dp"
         android:layout_marginLeft="@dimen/margin16dp"
@@ -33,10 +33,10 @@
             android:layout_height="wrap_content"
             android:text="September"
             android:textColor="@color/whiteColor"
-            android:textSize="15sp"
+            android:textSize="@dimen/textSizeM"
             android:gravity="center"
             android:background="@color/basicColor"
-            android:padding="10dp"
+            android:padding="@dimen/padding14dp"
             android:textStyle="bold"
             />
 

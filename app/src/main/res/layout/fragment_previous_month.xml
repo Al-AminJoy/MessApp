@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".PreviousMonthFragment">
+    tools:context=".Fragment.PreviousMonthFragment">
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/previous_month_content"
         />
-
 </FrameLayout>

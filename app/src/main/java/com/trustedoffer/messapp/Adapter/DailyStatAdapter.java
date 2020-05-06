@@ -27,25 +27,23 @@ public class DailyStatAdapter extends RecyclerView.Adapter<DailyStatAdapter.Dail
     @NonNull
     @Override
     public DailyStatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.daily_overview_layout,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.daily_overview_layout, parent, false);
         return new DailyStatViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DailyStatViewHolder holder, int position) {
-        UserDataModelClass data=list.get(position);
-        int date=data.getDay();
-        int breakfast=data.getBreakfast();
-        int lunch=data.getLunch();
-        int dinner=data.getDinner();
-        double debit=data.getDebit();
-
+        UserDataModelClass data = list.get(position);
+        int date = data.getDay();
+        int breakfast = data.getBreakfast();
+        int lunch = data.getLunch();
+        int dinner = data.getDinner();
+        double debit = data.getDebit();
         holder.tvDate.setText(Integer.toString(date));
         holder.tvBreakfast.setText(Integer.toString(breakfast));
         holder.tvLunch.setText(Integer.toString(lunch));
         holder.tvDinner.setText(Integer.toString(dinner));
         holder.tvDebit.setText(String.format(Locale.US, "%.2f", debit));
-
     }
 
     @Override
@@ -54,14 +52,15 @@ public class DailyStatAdapter extends RecyclerView.Adapter<DailyStatAdapter.Dail
     }
 
     public class DailyStatViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvDate,tvBreakfast,tvLunch,tvDinner,tvDebit;
+        private TextView tvDate, tvBreakfast, tvLunch, tvDinner, tvDebit;
+
         public DailyStatViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvBreakfast=itemView.findViewById(R.id.tvDailyMealBreakFastId);
-            tvDate=itemView.findViewById(R.id.tvDailyMealDateId);
-            tvLunch=itemView.findViewById(R.id.tvDailyMealLunchId);
-            tvDinner=itemView.findViewById(R.id.tvDailyMealDinnerId);
-            tvDebit=itemView.findViewById(R.id.tvDailyMealDebitId);
+            tvBreakfast = itemView.findViewById(R.id.tvDailyMealBreakFastId);
+            tvDate = itemView.findViewById(R.id.tvDailyMealDateId);
+            tvLunch = itemView.findViewById(R.id.tvDailyMealLunchId);
+            tvDinner = itemView.findViewById(R.id.tvDailyMealDinnerId);
+            tvDebit = itemView.findViewById(R.id.tvDailyMealDebitId);
         }
     }
 }

@@ -11,7 +11,7 @@ public class DebitReqModelClass {
 
     }
 
-    public DebitReqModelClass(String user_name,String user_email, String mess_key, String request_time, String approved_by, String approve_time, int day, int month, int year, Double debit, boolean approved) {
+    public DebitReqModelClass(String user_name,String user_email, String mess_key, String request_time, String approved_by, String approve_time, int day, int month, int year, Double debit, boolean approved,String key) {
         this.user_name=user_name;
         this.user_email = user_email;
         this.mess_key = mess_key;
@@ -23,15 +23,16 @@ public class DebitReqModelClass {
         this.year = year;
         this.debit = debit;
         this.approved = approved;
+        this.key=key;
     }
 
     public String getKey() {
         return key;
     }
 
-    public void setKey(String key) {
+  /* // public void setKey(String key) {
         this.key = key;
-    }
+    }*/
 
     public String getUser_name() {
         return user_name;

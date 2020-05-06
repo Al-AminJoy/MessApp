@@ -26,7 +26,6 @@
             android:text="Total Overview"
             />
 
-
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpMyStatId"
@@ -34,7 +33,6 @@
         android:layout_height="match_parent"
         android:layout_below="@id/tlMyStatId"
         >
-
 
     </androidx.viewpager.widget.ViewPager>
 

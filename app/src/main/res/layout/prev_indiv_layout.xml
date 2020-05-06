@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOtherStatLayId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin6dp"
+        android:layout_marginRight="@dimen/margin16dp"
+        android:layout_marginLeft="@dimen/margin16dp"
+        app:cardElevation="@dimen/dimen4dp"
+        app:cardCornerRadius="@dimen/dimen4dp"
+        app:cardBackgroundColor="@color/whiteColor"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin2dp"
+            android:background="@color/basicColor"
+            android:padding="@dimen/padding10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvPrevStatNameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="Al-Amin Islam Joy"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSizeM" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/whiteColor"
+                android:layout_marginLeft="@dimen/margin20dp"
+                android:layout_marginRight="@dimen/margin20dp"
+                android:layout_marginTop="@dimen/margin4dp"
+                android:layout_marginBottom="@dimen/margin4dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin8dp"
+                >
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Expense"
+                        android:gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/textSizeM"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/whiteColor"
+                        android:layout_marginLeft="@dimen/margin32dp"
+                        android:layout_marginRight="@dimen/margin32dp"
+                        android:layout_marginTop="@dimen/margin4dp"
+                        android:layout_marginBottom="@dimen/margin4dp"
+                        />
+                    <TextView
+                        android:id="@+id/tvPrevStatDebitId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/textSizeM" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Used"
+                        android:gravity="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/textSizeM"
+                        android:layout_marginTop="@dimen/margin8dp"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/whiteColor"
+                        android:layout_marginLeft="@dimen/margin32dp"
+                        android:layout_marginRight="@dimen/margin32dp"
+                        android:layout_marginTop="@dimen/margin4dp"
+                        android:layout_marginBottom="@dimen/margin4dp"
+                        />
+                    <TextView
+                        android:id="@+id/tvPrevStatUsedId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/textSizeM" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/whiteColor"
+                        android:layout_marginLeft="@dimen/margin8dp"
+                        android:layout_marginRight="@dimen/margin8dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total Meal"
+                            android:gravity="center"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/textSizeM"
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/whiteColor"
+                            android:layout_marginLeft="@dimen/margin32dp"
+                            android:layout_marginRight="@dimen/margin32dp"
+                            android:layout_marginTop="@dimen/margin4dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvPrevStatMealId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="-"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/textSizeM" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Status"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/margin8dp"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/textSizeM"
+
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/whiteColor"
+                            android:layout_marginLeft="@dimen/margin32dp"
+                            android:layout_marginRight="@dimen/margin32dp"
+                            android:layout_marginTop="@dimen/margin4dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            />
+                        <TextView
+                            android:id="@+id/tvPrevStatLayStatusId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="-"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/textSizeM" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

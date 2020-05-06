@@ -20,6 +20,7 @@ import java.util.Locale;
 public class PrevIndivAdapter extends RecyclerView.Adapter<PrevIndivAdapter.PrivIndivViewHolder> {
     private Context context;
     private List<OthersStatModelClass> list;
+
     public PrevIndivAdapter(Context context, List<OthersStatModelClass> list) {
         this.context = context;
         this.list = list;
@@ -28,13 +29,13 @@ public class PrevIndivAdapter extends RecyclerView.Adapter<PrevIndivAdapter.Priv
     @NonNull
     @Override
     public PrivIndivViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.others_stat_layout,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.prev_indiv_layout, parent, false);
         return new PrivIndivViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PrivIndivViewHolder holder, int position) {
-        final OthersStatModelClass data=list.get(position);
+        final OthersStatModelClass data = list.get(position);
         holder.tvName.setText(data.getUser_name());
         holder.tvDebit.setText(String.format(Locale.US, "%.2f", data.getDebit()));
         holder.tvUsed.setText(String.format(Locale.US, "%.2f", data.getUsed()));
@@ -48,14 +49,15 @@ public class PrevIndivAdapter extends RecyclerView.Adapter<PrevIndivAdapter.Priv
     }
 
     public class PrivIndivViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvName,tvDebit,tvMeal,tvUsed,tvUserStatus;
+        private TextView tvName, tvDebit, tvMeal, tvUsed, tvUserStatus;
+
         public PrivIndivViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName=itemView.findViewById(R.id.tvOtherStatNameId);
-            tvDebit=itemView.findViewById(R.id.tvOtherStatDebitId);
-            tvMeal=itemView.findViewById(R.id.tvOtherStatMealId);
-            tvUsed=itemView.findViewById(R.id.tvOtherStatUsedId);
-            tvUserStatus=itemView.findViewById(R.id.tvOtherStatLayStatusId);
+            tvName = itemView.findViewById(R.id.tvPrevStatNameId);
+            tvDebit = itemView.findViewById(R.id.tvPrevStatDebitId);
+            tvMeal = itemView.findViewById(R.id.tvPrevStatMealId);
+            tvUsed = itemView.findViewById(R.id.tvPrevStatUsedId);
+            tvUserStatus = itemView.findViewById(R.id.tvPrevStatLayStatusId);
         }
     }
 }

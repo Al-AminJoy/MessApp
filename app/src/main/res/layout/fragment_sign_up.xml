@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/basicColor"
+    tools:context=".Fragment.SignUpFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/tvLogInTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSizeXL"
+            android:text="Register"
+            android:textColor="@color/whiteColor"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin24dp"
+            android:layout_marginLeft="@dimen/margin24dp"
+            android:layout_marginRight="@dimen/margin24dp"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen4dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin24dp"
+            android:layout_marginRight="@dimen/margin12dp"
+            android:layout_marginLeft="@dimen/margin12dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="8"
+                android:background="@color/basicColor"
+                >
+                <ImageView
+                    android:id="@+id/ivLogInPassID"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_name"
+                    android:background="@color/basicColor"
+                    android:layout_gravity="center"
+                    />
+                <EditText
+                    android:id="@+id/etRegiNameId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:backgroundTint="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:inputType="textPersonName"
+                    android:background="@color/whiteColor"
+                    android:layout_gravity="center"
+                    android:hint=" Name"
+                    android:paddingLeft="@dimen/padding4dp"
+                    android:paddingRight="@dimen/padding4dp"
+                    android:textCursorDrawable="@color/textColor"
+                    android:paddingTop="@dimen/padding8dp"
+                    android:paddingBottom="@dimen/padding8dp"
+                    android:singleLine="true"
+                    android:maxLength="65"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-. "
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen4dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin32dp"
+            android:layout_marginRight="@dimen/margin12dp"
+            android:layout_marginLeft="@dimen/margin12dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="8"
+                android:background="@color/basicColor"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone"
+                    android:background="@color/basicColor"
+                    android:layout_gravity="center"
+                    />
+                <EditText
+                    android:id="@+id/etRegiNumberId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:backgroundTint="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:inputType="number"
+                    android:background="@color/whiteColor"
+                    android:layout_gravity="center"
+                    android:hint=" Number (Optional)"
+                    android:paddingLeft="@dimen/padding4dp"
+                    android:paddingRight="@dimen/padding4dp"
+                    android:textCursorDrawable="@color/textColor"
+                    android:paddingTop="@dimen/padding8dp"
+                    android:paddingBottom="@dimen/padding8dp"
+                    android:singleLine="true"
+                    android:maxLength="16"
+                    android:digits="0123456789"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen4dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin24dp"
+            android:layout_marginRight="@dimen/margin12dp"
+            android:layout_marginLeft="@dimen/margin12dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="8"
+                android:background="@color/basicColor"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_gender"
+                    android:background="@color/basicColor"
+                    android:layout_gravity="center"
+                    />
+                <EditText
+                    android:id="@+id/etRegiGenderId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:backgroundTint="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:background="@color/whiteColor"
+                    android:layout_gravity="center"
+                    android:hint=" Gender"
+                    android:paddingLeft="@dimen/padding4dp"
+                    android:paddingRight="@dimen/padding4dp"
+                    android:textCursorDrawable="@color/textColor"
+                    android:paddingTop="@dimen/padding8dp"
+                    android:paddingBottom="@dimen/padding8dp"
+                    android:maxLines="2"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="true"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginLeft="@dimen/margin12dp"
+            android:layout_marginTop="@dimen/margin14dp"
+            >
+            <ImageButton
+                android:id="@+id/ibtRegiNextId"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin18dp"
+                android:src="@drawable/ic_arrow"
+                android:padding="@dimen/padding8dp"
+                android:background="@drawable/button_shape_normal"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

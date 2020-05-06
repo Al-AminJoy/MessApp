@@ -26,13 +26,6 @@
         android:textSize="@dimen/textSizeM"
         android:gravity="center"
         />
-   <!-- <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_log_out"
-        android:layout_gravity="center"
-        android:padding="@dimen/padding4dp"
-        />-->
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -48,7 +41,7 @@
             android:padding="@dimen/padding14dp"
             android:textColor="@color/whiteColor"
             android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
+            app:rippleColor="@color/blackColor"
             android:layout_margin="@dimen/margin8dp"
             />
 
@@ -62,7 +55,7 @@
             android:padding="@dimen/padding14dp"
             android:textColor="@color/whiteColor"
             android:backgroundTint="@color/submitButtonColor"
-            app:rippleColor="@color/whiteColor"
+            app:rippleColor="@color/blackColor"
             />
     </LinearLayout>
 

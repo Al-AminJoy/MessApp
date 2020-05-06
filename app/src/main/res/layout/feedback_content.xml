@@ -73,7 +73,7 @@
            android:layout_height="wrap_content"
            android:layout_gravity="center"
            app:cornerRadius="@dimen/margin4dp"
-           app:rippleColor="@color/whiteColor"
+           app:rippleColor="@color/blackColor"
            android:backgroundTint="@color/submitButtonColor"
            android:padding="15dp"
            android:text="Send"

@@ -7,23 +7,20 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="10dp"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="3dp"
+        android:layout_marginLeft="@dimen/margin8dp"
+        android:layout_marginTop="@dimen/margin2dp"
+        android:layout_marginRight="@dimen/margin8dp"
         android:foreground="?android:selectableItemBackground"
-
-        >
+        app:cardCornerRadius="@dimen/dimen4dp"
+        app:cardElevation="@dimen/dimen2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/basicColor"
             android:orientation="horizontal"
-            android:padding="2dp"
-            android:weightSum="5"
-            >
+            android:padding="@dimen/padding4dp"
+            android:weightSum="5">
 
             <TextView
                 android:id="@+id/tvDailyMealDateId"
@@ -33,40 +30,37 @@
                 android:gravity="center"
                 android:text="-"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp" />
+                android:textSize="@dimen/textSizeM" />
 
             <TextView
                 android:id="@+id/tvDailyMealBreakFastId"
-
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="-"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp" />
+                android:textSize="@dimen/textSizeM" />
 
             <TextView
                 android:id="@+id/tvDailyMealLunchId"
-
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="-"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp" />
+                android:textSize="@dimen/textSizeM" />
 
             <TextView
                 android:id="@+id/tvDailyMealDinnerId"
-
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="-"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp" />
+                android:textSize="@dimen/textSizeM" />
 
             <TextView
                 android:id="@+id/tvDailyMealDebitId"
@@ -76,12 +70,9 @@
                 android:gravity="center"
                 android:text="-"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp" />
-
-
+                android:textSize="@dimen/textSizeM" />
 
         </LinearLayout>
-
 
     </androidx.cardview.widget.CardView>
 

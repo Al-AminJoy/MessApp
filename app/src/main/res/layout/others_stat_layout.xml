@@ -10,10 +10,8 @@
         android:layout_marginTop="@dimen/margin6dp"
         android:layout_marginRight="@dimen/margin16dp"
         android:layout_marginLeft="@dimen/margin16dp"
-        app:cardElevation="3dp"
-        app:cardCornerRadius="3dp"
-        android:foreground="?android:selectableItemBackground"
-        android:clickable="true"
+        app:cardElevation="@dimen/dimen4dp"
+        app:cardCornerRadius="@dimen/dimen4dp"
         app:cardBackgroundColor="@color/whiteColor"
         >
         <LinearLayout
@@ -39,8 +37,8 @@
                 android:background="@color/whiteColor"
                 android:layout_marginLeft="@dimen/margin20dp"
                 android:layout_marginRight="@dimen/margin20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="@dimen/margin4dp"
+                android:layout_marginBottom="@dimen/margin4dp"
                 />
 
             <LinearLayout
@@ -58,7 +56,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Debit"
+                        android:text="Expense"
                         android:gravity="center"
                         android:textColor="@color/whiteColor"
                         android:textSize="15sp"
@@ -69,8 +67,8 @@
                         android:background="@color/whiteColor"
                         android:layout_marginLeft="@dimen/margin32dp"
                         android:layout_marginRight="@dimen/margin32dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="@dimen/margin4dp"
+                        android:layout_marginBottom="@dimen/margin4dp"
                         />
                     <TextView
                         android:id="@+id/tvOtherStatDebitId"
@@ -79,15 +77,16 @@
                         android:layout_gravity="center"
                         android:text="-"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
+                        android:textSize="@dimen/textSizeM" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Used"
                         android:gravity="center"
+                        android:layout_marginTop="@dimen/margin8dp"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/textSizeM"
                         />
                     <View
                         android:layout_width="match_parent"
@@ -95,8 +94,8 @@
                         android:background="@color/whiteColor"
                         android:layout_marginLeft="@dimen/margin32dp"
                         android:layout_marginRight="@dimen/margin32dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="@dimen/margin4dp"
+                        android:layout_marginBottom="@dimen/margin4dp"
                         />
                     <TextView
                         android:id="@+id/tvOtherStatUsedId"
@@ -105,7 +104,7 @@
                         android:layout_gravity="center"
                         android:text="-"
                         android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
+                        android:textSize="@dimen/textSizeM" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -117,22 +116,21 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/whiteColor"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="@dimen/margin8dp"
+                        android:layout_marginRight="@dimen/margin8dp"
                         />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         >
-
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Total Meal"
                             android:gravity="center"
                             android:textColor="@color/whiteColor"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/textSizeM"
                             />
                         <View
                             android:layout_width="match_parent"
@@ -140,8 +138,8 @@
                             android:background="@color/whiteColor"
                             android:layout_marginLeft="@dimen/margin32dp"
                             android:layout_marginRight="@dimen/margin32dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="@dimen/margin4dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
                             />
                         <TextView
                             android:id="@+id/tvOtherStatMealId"
@@ -150,14 +148,15 @@
                             android:layout_gravity="center"
                             android:text="-"
                             android:textColor="@color/whiteColor"
-                            android:textSize="15dp" />
+                            android:textSize="@dimen/textSizeM" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Status"
                             android:gravity="center"
+                            android:layout_marginTop="@dimen/margin8dp"
                             android:textColor="@color/whiteColor"
-                            android:textSize="15sp"
+                            android:textSize="@dimen/textSizeM"
 
                             />
                         <View
@@ -166,8 +165,8 @@
                             android:background="@color/whiteColor"
                             android:layout_marginLeft="@dimen/margin32dp"
                             android:layout_marginRight="@dimen/margin32dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="@dimen/margin4dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
                             />
                         <TextView
                             android:id="@+id/tvOtherStatLayStatusId"
@@ -176,76 +175,26 @@
                             android:layout_gravity="center"
                             android:text="-"
                             android:textColor="@color/whiteColor"
-                            android:textSize="15dp" />
+                            android:textSize="@dimen/textSizeM" />
                     </LinearLayout>
 
                 </LinearLayout>
-            </LinearLayout>
 
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btOtherStatMealDetailsId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Show Details"
+                android:textSize="@dimen/textSizeM"
+                android:padding="@dimen/padding8dp"
+                android:textColor="@color/whiteColor"
+                android:backgroundTint="@color/submitButtonColor"
+                app:rippleColor="@color/blackColor"
+                android:layout_marginTop="@dimen/margin8dp"
+                />
         </LinearLayout>
 
-        <!--
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:orientation="horizontal"
-                    android:weightSum="5"
-                    android:background="@color/basicColor"
-                    >
-
-                    <TextView
-                        android:id="@+id/tvOtherStatNameId"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="-"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvOtherStatDebitId"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="-"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvOtherStatMealId"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="&#45;&#45;"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvOtherStatUsedId"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="-"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvOtherStatLayStatusId"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="-"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="15dp" />
-
-                </LinearLayout>
-        -->
     </androidx.cardview.widget.CardView>
 
 

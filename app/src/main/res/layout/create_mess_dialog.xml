@@ -109,12 +109,10 @@
                 android:layout_height="wrap_content"
                 android:text="Create"
                 android:padding="@dimen/padding14dp"
-                android:textColor="@color/whiteColor"
+                android:textColor="@color/blackColor"
                 android:backgroundTint="@color/submitButtonColor"
                 app:rippleColor="@color/whiteColor"
                 />
         </RelativeLayout>
-
-
     </LinearLayout>
 </LinearLayout>

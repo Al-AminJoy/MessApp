@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".AddMealFragment">
+    tools:context=".Fragment.AddMealFragment">
     <include
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateReqFragment">
+    tools:context=".Fragment.UpdateReqFragment">
     <include
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         layout="@layout/update_req_content"/>
-
 </LinearLayout>

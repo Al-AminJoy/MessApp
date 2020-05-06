@@ -1,119 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/basicColor"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/margin16dp"
-    android:layout_marginRight="@dimen/margin16dp"
     android:layout_marginTop="@dimen/margin8dp"
-    android:layout_height="wrap_content">
+    android:layout_marginRight="@dimen/margin16dp"
+    android:background="@color/basicColor"
+    android:orientation="vertical">
 
-   <androidx.cardview.widget.CardView
-       android:layout_width="match_parent"
-       app:cardCornerRadius="@dimen/dimen4dp"
-       app:cardElevation="@dimen/dimen2dp"
-       android:layout_height="wrap_content"
-       app:cardBackgroundColor="@color/whiteColor"
-       >
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:weightSum="3"
-           android:background="@color/basicColor"
-           android:layout_margin="@dimen/margin2dp"
-           android:padding="@dimen/padding8dp"
-           android:layout_height="wrap_content">
-           <LinearLayout
-               android:layout_width="0dp"
-               android:layout_weight="2"
-               android:background="@color/basicColor"
-               android:layout_margin="@dimen/margin2dp"
-               android:layout_gravity="center_vertical"
-               android:orientation="vertical"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:id="@+id/tvDebitReqNameId"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Al-Amin Islam Joy"
-                   android:textColor="@color/whiteColor"
-                   android:padding="@dimen/padding4dp"
-                   android:textSize="@dimen/textSizeM"
-                   />
-               <TextView
-                   android:id="@+id/tvDebitReqDateId"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Date : 17-04-2020"
-                   android:padding="@dimen/padding4dp"
-                   android:textColor="@color/whiteColor"
-                   android:textSize="@dimen/textSizeM"
-                   />
-               <TextView
-                   android:id="@+id/tvDebitReqDebitId"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Debit : 200"
-                   android:padding="@dimen/padding4dp"
-                   android:textColor="@color/whiteColor"
-                   android:textSize="@dimen/textSizeM"
-                   />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/whiteColor"
+        app:cardCornerRadius="@dimen/dimen4dp"
+        app:cardElevation="@dimen/dimen2dp">
 
-           </LinearLayout>
-           <RelativeLayout
-               android:layout_width="0dp"
-               android:layout_weight="1"
-               android:layout_margin="@dimen/margin2dp"
-               android:background="@color/basicColor"
-               android:layout_gravity="center"
-               android:layout_height="wrap_content">
-               <ProgressBar
-                   android:id="@+id/pbConfirmDebitProgressBar"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:indeterminate="true"
-                   android:layout_marginLeft="@dimen/margin18dp"
-                   android:layout_marginRight="@dimen/margin18dp"
-                   android:indeterminateDrawable="@drawable/log_in_progress_color"
-                   android:layout_centerInParent="true"
-                   android:visibility="gone"
-                   />
-               <LinearLayout
-                   android:id="@+id/linLayButtonsDebitReq"
-                   android:layout_width="match_parent"
-                   android:orientation="vertical"
-                   android:layout_gravity="center_vertical"
-                   android:layout_height="wrap_content">
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btDebitReqConfirmId"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Confirm"
-                       android:padding="@dimen/padding4dp"
-                       android:textColor="@color/whiteColor"
-                       android:backgroundTint="@color/submitButtonColor"
-                       app:rippleColor="@color/whiteColor"
-                       android:layout_gravity="center"
-                       android:textSize="@dimen/textSizeM"
-                       />
-                   <com.google.android.material.button.MaterialButton
-                       android:id="@+id/btDebitReqCancelId"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Delete"
-                       android:padding="@dimen/padding4dp"
-                       android:textColor="@color/whiteColor"
-                       android:backgroundTint="@color/submitButtonColor"
-                       app:rippleColor="@color/whiteColor"
-                       android:layout_gravity="center"
-                       android:textSize="@dimen/textSizeM"
-                       android:layout_marginTop="@dimen/margin4dp"
-                       />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin2dp"
+            android:background="@color/basicColor"
+            android:padding="@dimen/padding8dp"
+            android:weightSum="3">
 
-               </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin2dp"
+                android:layout_weight="2"
+                android:background="@color/basicColor"
+                android:orientation="vertical">
 
-           </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvDebitReqNameId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding4dp"
+                    android:text="Al-Amin Islam Joy"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM" />
 
-       </LinearLayout>
-   </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tvDebitReqDateId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding4dp"
+                    android:text="Date : 17-04-2020"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM" />
+
+                <TextView
+                    android:id="@+id/tvDebitReqDebitId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding4dp"
+                    android:text="Debit : 200"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin2dp"
+                android:layout_weight="1"
+                android:background="@color/basicColor">
+
+                <LinearLayout
+                    android:id="@+id/linLayButtonsDebitReq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btDebitReqConfirmId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/submitButtonColor"
+                        android:padding="@dimen/padding4dp"
+                        android:text="Confirm"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/textSizeM"
+                        app:rippleColor="@color/blackColor" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btDebitReqCancelId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin4dp"
+                        android:backgroundTint="@color/submitButtonColor"
+                        android:padding="@dimen/padding4dp"
+                        android:text="Delete"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="@dimen/textSizeM"
+                        app:rippleColor="@color/blackColor" />
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pbConfirmDebitProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin18dp"
+                    android:layout_marginRight="@dimen/margin18dp"
+                    android:indeterminate="true"
+                    android:indeterminateDrawable="@drawable/log_in_progress_color"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

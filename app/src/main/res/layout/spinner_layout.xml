@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:gravity="center">
 
-      <!--  <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/basicColor"
-            android:gravity="center"
-            android:layout_marginBottom="2dp"
-            >
-
-
-        </LinearLayout>
--->
-
-    <TextView
-        android:id="@+id/tvMealSpinnerValueId"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textColor="@color/whiteColor"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/basicColor"
-        />
+        android:layout_marginBottom="@dimen/margin2dp"
+        android:background="@color/whiteColor"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvMealSpinnerValueId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/basicColor"
+            android:gravity="center"
+            android:padding="@dimen/padding8dp"
+            android:text="0"
+            android:textColor="@color/whiteColor"
+            android:textSize="@dimen/textSizeM"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,128 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/backgroundColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MyStatDailyOverViewFragment">
-    <TextView
-        android:id="@+id/tvMyDailyStatNoDataFoundId"
+    tools:context=".Fragment.MyStatDailyOverViewFragment">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text=""
-        android:textColor="@color/basicColor"
-        android:textSize="@dimen/textSizeXL"
-        android:gravity="center"
-        android:visibility="gone"
-        />
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        app:cardCornerRadius="3dp"
-        android:layout_marginTop="@dimen/margin10dp"
-        android:layout_marginRight="@dimen/margin10dp"
-        android:layout_marginLeft="@dimen/margin10dp"
-
-        >
+        android:orientation="vertical"
+        android:id="@+id/linId"
+        android:layout_above="@id/btUpdateData"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/tvMyDailyStatMonthId"
+            android:id="@+id/tvMyDailyStatNoDataFoundId"
             android:layout_width="match_parent"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="September"
-            android:textColor="@color/whiteColor"
-            android:textSize="15sp"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/basicColor"
+            android:textSize="@dimen/textSizeXL"
             android:gravity="center"
-            android:background="@color/basicColor"
-            android:padding="10dp"
-            android:textStyle="bold"
+            android:visibility="gone"
             />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="3dp"
-        app:cardCornerRadius="3dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-
-        >
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:background="@color/basicColor"
-            android:padding="5dp"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="3dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin10dp"
+            android:layout_marginLeft="@dimen/margin10dp"
+
             >
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:id="@+id/tvMyDailyStatMonthId"
+                android:layout_width="match_parent"
+                android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:text="Date"
+                android:text="September"
                 android:textColor="@color/whiteColor"
-                android:textSize="15sp"
+                android:textSize="@dimen/textSizeM"
                 android:gravity="center"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Breakfast"
-                android:textColor="@color/whiteColor"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Lunch"
-                android:textColor="@color/whiteColor"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Dinner"
-                android:textColor="@color/whiteColor"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Debit"
-                android:textColor="@color/whiteColor"
-                android:textSize="15sp"
-                android:gravity="center"
+                android:background="@color/basicColor"
+                android:padding="10dp"
                 android:textStyle="bold"
                 />
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/dimen4dp"
+            app:cardCornerRadius="@dimen/dimen2dp"
+            android:layout_marginTop="@dimen/margin16dp"
+            android:layout_marginRight="@dimen/margin8dp"
+            android:layout_marginLeft="@dimen/margin8dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:background="@color/basicColor"
+                android:padding="@dimen/padding8dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Breakfast"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Lunch"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Dinner"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Expense"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/textSizeM"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
-   <androidx.recyclerview.widget.RecyclerView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/rvMyDailyStat"
-       tools:listitem="@layout/daily_overview_layout"
-       />
+        </androidx.cardview.widget.CardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvMyDailyStat"
+            android:layout_marginTop="@dimen/margin4dp"
+            tools:listitem="@layout/daily_overview_layout"
+            />
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btUpdateData"
@@ -130,16 +139,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cornerRadius="@dimen/margin4dp"
-        android:layout_marginLeft="@dimen/margin10dp"
-        android:layout_marginRight="@dimen/margin10dp"
-        app:rippleColor="@color/whiteColor"
+        android:layout_marginLeft="@dimen/margin8dp"
+        android:layout_marginRight="@dimen/margin8dp"
+        app:rippleColor="@color/blackColor"
         android:backgroundTint="@color/basicColor"
-        android:padding="15dp"
+        android:padding="@dimen/padding14dp"
         android:text="Update Data"
         app:strokeColor="@color/whiteColor"
         app:strokeWidth="@dimen/margin2dp"
         android:textColor="@color/whiteColor"
-        android:textSize="15sp"
+        android:textSize="@dimen/textSizeM"
+        android:layout_marginTop="@dimen/margin4dp"
+        android:layout_alignParentBottom="true"
         />
 
-</LinearLayout>
+</RelativeLayout>

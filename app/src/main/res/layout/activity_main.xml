@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/HomeDrawerId"
     android:background="@color/backgroundColor"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <include
         android:layout_width="match_parent"

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/basicColor"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/ibtRegiCloseDialogId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:background="@color/basicColor"
+            android:padding="@dimen/padding8dp"
+            android:layout_gravity="right"
+            android:clickable="true"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding24dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/whiteColor"
+            android:text="Please, Submit The Code For Verify Which Is Send To Your Email"
+            android:padding="@dimen/padding8dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:background="@color/whiteColor"
+            android:padding="@dimen/padding4dp"
+            android:hint="Code"
+            app:hintTextColor="@color/submitButtonColor"
+            app:boxStrokeColor="@color/submitButtonColor"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inTxtRegiSubmitCodeId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/amountDigits"
+                android:inputType="number"
+                android:textCursorDrawable="@color/textColor"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/textSizeM"
+                android:maxLength="12"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:id="@+id/pbRegiDialogId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:padding="@dimen/padding8dp"
+                android:indeterminateDrawable="@drawable/log_in_progress_color"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:background="@color/basicColor"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btRegiSubmitDialogId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:padding="@dimen/padding14dp"
+                android:textColor="@color/whiteColor"
+                android:backgroundTint="@color/submitButtonColor"
+                app:rippleColor="@color/blackColor"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

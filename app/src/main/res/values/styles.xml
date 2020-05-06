@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
+        <!--   <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>-->
         <!-- To change the textColor of options menu-->
         <item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>
         <!-- To change the background of options menu-->
@@ -14,6 +15,7 @@
         For Overflow Icon
         <item name="actionOverflowButtonStyle">@style/OverFlow</item>
     </style>
+
     <!-- For Overflow Icon -->
     <style name="OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_option</item>
@@ -29,6 +31,8 @@
     <!--    Change Progress Color-->
     <style name="ProgressColor" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">@color/basicColor</item>
+        <item name="android:windowBackground">@color/whiteColor</item>
+        <item name="android:layout_centerInParent">true</item>
     </style>
 
     <style name="ToolBarStyle.Base" parent="">
@@ -41,6 +45,30 @@
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="overlapAnchor">false</item>
         <item name="android:dropDownVerticalOffset">5dp</item>
+    </style>
+    <!--Toolbar Text Size-->
+    <style name="yourstyle" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+   <!--Splash Screen Intro Color-->
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+     <!--Date Picker Background Color-->
+    <!--<style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/basicColor</item>
+        <item name="android:calendarTextColor">@color/blackColor</item>
+        <item name="android:dayOfWeekBackground">@color/whiteColor</item>
+        <item name="android:datePickerMode">calendar</item>
+        <item name="android:yearListSelectorColor">@color/basicColor</item>
+    </style>-->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/basicColor</item>
+        <item name="android:datePickerMode">calendar</item>
     </style>
 
 </resources>

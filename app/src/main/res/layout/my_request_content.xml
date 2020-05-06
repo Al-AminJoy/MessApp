@@ -22,8 +22,6 @@
             android:layout_height="match_parent"
             android:text="Update Request"
             />
-
-
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpMyReqId"
@@ -31,7 +29,5 @@
         android:layout_height="match_parent"
         android:layout_below="@id/tlMyReqId"
         >
-
-
     </androidx.viewpager.widget.ViewPager>
 </RelativeLayout>
